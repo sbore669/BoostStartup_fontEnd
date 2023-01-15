@@ -1,0 +1,7 @@
+{
+  "name": "Malistartups_Invest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
