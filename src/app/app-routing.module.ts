@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'connexion',
    // loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
    loadChildren: () => import('./connexion/connexion.module').then( m => m.ConnexionPageModule)
 
@@ -19,6 +19,22 @@ const routes: Routes = [
   {
     path: 'inscription',
     loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./debut/debut.module').then( m => m.DebutPageModule)
+  },
+  {
+    path: 'typecompte',
+    loadChildren: () => import('./typecompte/typecompte.module').then( m => m.TypecomptePageModule)
+  },
+  {
+    path: 'splashh',
+    loadChildren: () => import('./splashh/splashh.module').then( m => m.SplashhPageModule)
+  },
+  {
+    path: 'comptstart',
+    loadChildren: () => import('./comptstart/comptstart.module').then( m => m.ComptstartPageModule)
   }
 ];
 @NgModule({
