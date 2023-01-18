@@ -47,6 +47,18 @@ const routes: Routes = [
   {
     path: 'validation',
     loadChildren: () => import('./validation/validation.module').then( m => m.ValidationPageModule)
+  },
+  {
+    path: 'statistique',
+    loadChildren: () => import('./statistique/statistique.module').then( m => m.StatistiquePageModule)
+  },
+  {
+    path: 'projetstartups',
+    loadChildren: () => import('./projetstartups/projetstartups.module').then( m => m.ProjetstartupsPageModule)
+  },
+  {
+    path: 'investstartp',
+    loadChildren: () => import('./investstartp/investstartp.module').then( m => m.InveststartpPageModule)
   }
 ];
 @NgModule({
