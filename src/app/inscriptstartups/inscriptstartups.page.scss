@@ -1,0 +1,43 @@
+// .mat-stepper-vertical {
+//     margin-top: 8px;
+// }
+
+// .mat-mdc-form-field {
+//     margin-top: 16px;
+// }
+hr {
+    border: #38B6FF;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: #38B6FF;
+    height: 1px;
+    border-radius: 5px;
+}
+
+.tit {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+// .next{
+//     background-color: #38B6FF !important;
+// }
+button.mat-stepper-previous {
+    border: 1px deepskyblue solid;
+    width: 31vw;
+    margin-top: 15%;
+    background: #38b6ff;
+    border-radius: 15px;
+    height: 40px;
+    color: #fff;
+}
+button.mat-stepper-next {
+    border: 1px deepskyblue solid;
+    width: 30vw;
+    margin-top: 15%;
+    background: #38b6ff;
+    border-radius: 15px;
+    height: 40px;
+    color: #fff;
+}

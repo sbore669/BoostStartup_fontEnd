@@ -35,6 +35,18 @@ const routes: Routes = [
   {
     path: 'comptstart',
     loadChildren: () => import('./comptstart/comptstart.module').then( m => m.ComptstartPageModule)
+  },
+  {
+    path: 'dashbord-start',
+    loadChildren: () => import('./dashbord-start/dashbord-start.module').then( m => m.DashbordStartPageModule)
+  },
+  {
+    path: 'inscriptstartups',
+    loadChildren: () => import('./inscriptstartups/inscriptstartups.module').then( m => m.InscriptstartupsPageModule)
+  },
+  {
+    path: 'validation',
+    loadChildren: () => import('./validation/validation.module').then( m => m.ValidationPageModule)
   }
 ];
 @NgModule({
