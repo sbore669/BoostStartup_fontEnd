@@ -8,13 +8,16 @@ import { DashbordStartPageRoutingModule } from './dashbord-start-routing.module'
 
 import { DashbordStartPage } from './dashbord-start.page';
 
+
+
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    DashbordStartPageRoutingModule
-  ],
-  declarations: [DashbordStartPage]
+    declarations: [DashbordStartPage],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        DashbordStartPageRoutingModule,
+
+    ]
 })
 export class DashbordStartPageModule {}

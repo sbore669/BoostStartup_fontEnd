@@ -11,5 +11,12 @@ export class DashbordStartPage implements OnInit {
 
   ngOnInit() {
   }
+  options={
+    slidesPerView:1,   // NOMBRE DE SLIDE PAR PAGE = 1
+    centeredSlider:true,
+   // loop:true,
+    spaceBetween:10,
+    autoplay:false
+  }
 
 }

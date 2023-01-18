@@ -3,8 +3,83 @@
     width: 100%;
     height: 100%;
 }
-.container{
+ion-tab-bar{
+     --background: #1C5B80;
+}
+.contti{
+    margin-top: 25%;
     width: 100vw;
-    height: 80vh;
+    height: 67vh;
     background: #fff;
+    border-radius: 20px;
+}
+.ent{
+    position: relative;
+    top: 15px;
+    margin: 5px;
+}
+.cardsld{
+    background: #7ED957;
+    width: 100vw;
+    height: 30vh;
+    border-radius: 40px;
+    color: #fff;
+    // transform: scale(1.1, 1.1) rotate(1deg);
+    //     transition: 600ms all ease-in-out;
+    
+}
+.cardsldbleu{
+    background: #38B6FF;
+    width: 100vw;
+    height: 30vh;
+    border-radius: 40px;
+    color: #fff;
+}
+.principale{
+    position: relative;
+    bottom: 10vh;
+}
+// .slidee{
+//     margin-top: -10px;
+// }
+.circle{
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.tcll{
+    color: #fff;
+    font-size: 20px;
+    text-align: start;
+    font-weight: 500;
+    
+}
+.montan{
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 63px;
+    text-align: start;
+}
+.projcaerd{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+}
+.contcard{
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: start;
+}
+.projtt{
+    color: #000000;
+    background-color: #ffffff;
+    height: 50px;
+    width: 50px;
+    border-radius: 40px 0px;
+    box-shadow: 1px 3px 4px 2px rgb(0,0,0.25);
+    font-size: 30px;
+    justify-content: center;
 }
