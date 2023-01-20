@@ -3,14 +3,21 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+
+    path: '',
+    redirectTo:'debut',
+    pathMatch:'full'
+    // loadChildren: () => import('./debut/debut.module').then( m => m.DebutPageModule)
+  },
+  {
     path: 'connexion',
    // loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
    loadChildren: () => import('./connexion/connexion.module').then( m => m.ConnexionPageModule)
 
   },
   {
-    path: 'tab4',
-    loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
     path: 'connexion',
@@ -21,7 +28,8 @@ const routes: Routes = [
     loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
   },
   {
-    path: '',
+
+    path: 'debut',
     loadChildren: () => import('./debut/debut.module').then( m => m.DebutPageModule)
   },
   {
@@ -59,6 +67,34 @@ const routes: Routes = [
   {
     path: 'investstartp',
     loadChildren: () => import('./investstartp/investstartp.module').then( m => m.InveststartpPageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./tabac/tabac.module').then( m => m.TabacPageModule)
+  },
+  {
+    path: 'acceuil',
+    loadChildren: () => import('./Invest/acceuil/acceuil.module').then( m => m.AcceuilPageModule)
+  },
+  {
+    path: 'mesinvestissement',
+    loadChildren: () => import('./Invest/mesinvestissement/mesinvestissement.module').then( m => m.MesinvestissementPageModule)
+  },
+  {
+    path: 'notification',
+    loadChildren: () => import('./Invest/notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  {
+    path: 'startups',
+    loadChildren: () => import('./Invest/startups/startups.module').then( m => m.StartupsPageModule)
+  },
+  {
+    path: 'profil',
+    loadChildren: () => import('./Invest/profil/profil.module').then( m => m.ProfilPageModule)
+  },
+  {
+    path: 'detailprojet',
+    loadChildren: () => import('./Invest/detailprojet/detailprojet.module').then( m => m.DetailprojetPageModule)
   }
 ];
 @NgModule({
