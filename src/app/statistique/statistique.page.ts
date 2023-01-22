@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartOptions } from 'chart.js';
 import { ChartEvent } from 'chart.js/dist/core/core.plugins';
 import { ChartType } from 'chart.js/dist/types/index';
+import { BaseChartDirective } from 'ng2-charts';
 
 
 
@@ -15,39 +16,33 @@ export class StatistiquePage implements OnInit {
   ngOnInit(): void {
     
   }
+  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+
   public barChartOptions: ChartConfiguration['options'] = {
-    elements: {
-      line: {
-        tension: 0.4
-      }
-    },
-    // Nous utilisons ces structures vides comme espaces réservés pour la thématisation dynamique.
+    responsive: true,
+    // We use these empty structures as placeholders for dynamic theming.
     scales: {
       x: {},
       y: {
-        min: 0
+        min: 10
       }
     },
     plugins: {
-      legend: { display: true, 
-      // align:'top',
-
-
-    },
-
-
-
+      legend: {
+        display: true,
+      }
     }
   };
-  public barChartLabels: string[] = [ 'Lundi', 'Mardi', 'Mercrédi', 'Jeudi', 'Vendrédi', 'Samedi', 'Dimache' ];
   public barChartType: ChartType = 'bar';
-
+  public barChartPlugins = [
+    
+  ];
 
   public barChartData: ChartData<'bar'> = {
-    labels: this.barChartLabels,
+    labels: [ '2006', '2007', '2008', '2009', '2010', '2011', '2012' ],
     datasets: [
-      { data: [ 25, 28, 62, 25, 95, 55,  ], label: 'Taux de Ventes', backgroundColor:'#29B6F6', borderRadius:8 },
-      // { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Series B' }
+      { data: [ 65, 59, 80, 81, 56, 55, 40 ], label: 'Series A' },
+      { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Series B' }
     ]
   };
 
@@ -61,6 +56,17 @@ export class StatistiquePage implements OnInit {
   }
 
   public randomize(): void {
-    this.barChartType = this.barChartType === 'bar' ? 'line' : 'bar';
+    // Only Change 3 values
+    this.barChartData.datasets[0].data = [
+      Math.round(Math.random() * 100),
+      59,
+      80,
+      Math.round(Math.random() * 100),
+      56,
+      Math.round(Math.random() * 100),
+      40 ];
+
+    this.chart?.update();
   }
+  
 }

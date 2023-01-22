@@ -1,24 +1,29 @@
-.cont{
+.cont {
     background: #1C5B80;
     width: 100%;
     height: 100%;
 }
-ion-tab-bar{
-     --background: #1C5B80;
+
+ion-tab-bar {
+    --background: #1C5B80;
+    --border: none;
 }
-.contti{
+
+.contti {
     margin-top: 25%;
     width: 100vw;
     height: 67vh;
     background: #fff;
     border-radius: 20px;
 }
-.ent{
+
+.ent {
     position: relative;
     top: 15px;
     margin: 5px;
 }
-.cardsld{
+
+.cardsld {
     background: #7ED957;
     width: 100vw;
     height: 25vh;
@@ -26,21 +31,24 @@ ion-tab-bar{
     color: #fff;
     // transform: scale(1.1, 1.1) rotate(1deg);
     //     transition: 600ms all ease-in-out;
-    
+
 }
-.cardsldbleu{
+
+.cardsldbleu {
     background: #38B6FF;
     width: 100vw;
     height: 25vh;
     border-radius: 40px;
     color: #fff;
 }
-.ios .principale{
+
+.ios .principale {
     position: relative;
     bottom: 21%;
     margin-bottom: 5%;
 }
-.md .principale{
+
+.md .principale {
     position: relative;
     bottom: 16%;
     margin-bottom: 5%;
@@ -49,59 +57,67 @@ ion-tab-bar{
 // .slidee{
 //     margin-top: -10px;
 // }
-.circle{
+.circle {
     background-color: #fff;
     height: 50px;
     width: 50px;
     border-radius: 50%;
 }
-.tcll{
+
+.tcll {
     color: #fff;
     font-size: 20px;
     text-align: start;
     font-weight: 500;
-    
+
 }
-.montan{
+
+.montan {
     color: #ffffff;
     font-size: 25px;
     font-weight: 700;
     line-height: 63px;
     text-align: start;
 }
-.projcaerd{
+
+.projcaerd {
     display: flex;
     align-items: center;
     width: 100vw;
     bottom: 28px;
 }
-.contcard{
+
+.contcard {
     color: #ffffff;
     font-size: 15px;
     font-weight: 500;
     text-align: start;
 }
-.projtt{
+
+.projtt {
     color: #000000;
     background-color: #ffffff;
     height: 50px;
     width: 50px;
     border-radius: 40px 0px;
-    box-shadow: 1px 3px 4px 2px rgb(0,0,0.25);
+    box-shadow: 1px 3px 4px 2px rgb(0, 0, 0.25);
     font-size: 30px;
     justify-content: center;
 }
-.titt{
+
+.titt {
     position: relative;
     // bottom: 14vh;
     left: 5%;
 }
-.proj{
+
+.proj {
     position: relative;
     // bottom: 13vh;
     left: 4%;
     margin-top: 2%;
 }
+
 .inf-item {
     font-style: normal;
     font-weight: 600;
@@ -111,66 +127,78 @@ ion-tab-bar{
     position: relative;
     right: 15%;
 }
-.inf-itemt{
+
+.inf-itemt {
     font-style: normal;
     font-weight: 400;
-    rgba:(0, 0, 0, 0.5);
+    rgba: (0, 0, 0, 0.5);
     font-size: 13px;
     line-height: 23px;
     padding: 0 !important;
     position: relative;
     right: 15%;
 }
-.img-style{
+
+.img-style {
     left: 24px;
     border-radius: 10px;
 }
-.equipes{
+
+.equipes {
     // position: relative;
     // bottom: 13vh;
 }
-.projetadd{
+
+.projetadd {
     // position: relative;
     // bottom: 13vh;
 }
+
 .carradi {
     border-radius: 15px;
     font-size: 12px;
 }
-.md .containu{
+
+.md .containu {
     // position: relative;
     // bottom: 15vh;
     position: absolute;
     margin-top: -86px;
 }
-.ios .containu{
+
+.ios .containu {
     // position: relative;
     // bottom: 15vh;
     position: relative;
     bottom: 19vh;
 }
-.md .cardtop{
+
+.md .cardtop {
     width: 100%;
     height: 18vh;
     display: flex;
 }
-.ios .cardtop{
+
+.ios .cardtop {
     width: 100%;
     height: 18vh;
     display: flex;
 }
+
 ion-card-header.ios {
     display: flex;
     flex-flow: column-reverse;
 }
-.md .card1{
+
+.md .card1 {
     border-radius: 15px;
     width: 100%;
     height: 100%;
     max-width: 100%;
     max-height: 100%;
 }
-.md .card2{
+
+.md .card2 {
     border-radius: 15px;
     width: 100%;
     height: 100%;
@@ -178,13 +206,12 @@ ion-card-header.ios {
     max-height: 100%;
 
 }
-.ios .infoprojets{
 
-}
-.md .infoprojets{
+.ios .infoprojets {}
 
-}
-.ios .card1{
+.md .infoprojets {}
+
+.ios .card1 {
     border-radius: 15px;
     width: 100%;
     height: 100%;
@@ -192,7 +219,8 @@ ion-card-header.ios {
     max-height: 100%;
     bottom: 20px;
 }
-.ios .card2{
+
+.ios .card2 {
     border-radius: 15px;
     width: 100%;
     height: 100%;

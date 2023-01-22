@@ -1,0 +1,23 @@
+img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+p.nomstart {
+    font-size: 15px;
+    font-weight: 600;
+}
+p.messges {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 13px;
+    font-weight: 400;
+}
+p.delais {
+    font-size: 12px;
+}
+.card{
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 3px 0px;
+}
