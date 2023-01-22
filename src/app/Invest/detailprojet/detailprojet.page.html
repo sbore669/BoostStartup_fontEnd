@@ -1,9 +1,132 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>detailprojet</ion-title>
+  <ion-toolbar class="d-flex">
+    <ion-icon routerLink="/tabac/acceuil" class="ioconback" name="arrow-back"></ion-icon>
+    <ion-title>Details du projets</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="container">
+    <img src="/assets/images/projets.jpg" class="imageproj" alt="" srcset="">
+    <div class="d-flex  align-items-center mt-1 ms-2">
+      <div class="phtprojet">
+        <img src="/assets/images/logost.jpg" class="logcv" alt="" srcset="">
+      </div>
+      <div class="ms-2 nomstartp">Vollaile+</div>
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle class="d-flex justify-content-between align-items-center statnon">
+        <div class=""><ion-icon name="folder-open-outline"></ion-icon>Agriculture</div>
+        <div class="etatss">disponible</div>
+      </ion-card-subtitle>
+      <ion-card-title class="nomprj">My Farming - Application de suivie et production des volaille</ion-card-title>
+    </ion-card-header>
 
+    <ion-card-content class="descript">
+      Application Gestion de la production et commercialisation des poulets de chair, pondeuses, œufs, poussins et
+      leurs nourritures
+      <!-- lieu pour les collapse -->
+      <hr class="border-primary">
+      
+    </ion-card-content>
+    <!-- debut part  -->
+    <div class="card w-100 mb-2">
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <div class="">Description</div>
+        <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+          name="chevron-down-outline"></ion-icon>
+      </div>
+
+      <!-- debut de la collapse -->
+      <div class="collapse" id="collapseExample1">
+        <div class="detailsfin">
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Date de début :</p>
+            <p>01/01/2023</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Publication :</p>
+            <p>01/08/2022</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Budget:</p>
+            <p>5 000 000 XOF</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Total collecté :</p>
+            <p>01/01/2023</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Durée du projet :</p>
+            <p>2 ans</p>
+          </div>
+          <!-- <hr class="border-primary"> -->
+        </div>
+      </div>
+      <!-- fin de la collapse -->
+    </div>
+    <!-- fin du card -->
+    <!-- debut part  -->
+    <div class="card w-100 mb-2">
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <div class="">Information Action</div>
+        <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
+          name="chevron-down-outline"></ion-icon>
+      </div>
+
+      <!-- debut de la collapse -->
+      <div class="collapse" id="collapseExample2">
+        <div class="detailsfin">
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Prix d'une action :</p>
+            <p>5000 XOF</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Total actions:</p>
+            <p>01/08/2022</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Action disponible:</p>
+            <p>0</p>
+          </div>
+          <!-- <hr class="border-primary"> -->
+        </div>
+      </div>
+      <!-- fin de la collapse -->
+    </div>
+    <!-- fin du card  -->
+    <!-- debut part  -->
+    <div class="card w-100 mb-2">
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <div class="">Information sur le Prêt</div>
+        <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample3"
+          name="chevron-down-outline"></ion-icon>
+      </div>
+
+      <!-- debut de la collapse -->
+      <div class="collapse" id="collapseExample3">
+        <div class="detailsfin">
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Pourcentage :</p>
+            <p>5 % </p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Prêt minimun :</p>
+            <p>20 000</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Prêt maximun:</p>
+            <p>0</p>
+          </div>
+          <!-- <hr class="border-primary"> -->
+        </div>
+      </div>
+      <!-- fin de la collapse -->
+    </div>
+    <div class="mt-5 mb-5 ion-text-center">
+      <!-- <button type="button" routerLink="/" class="btn btn-primary boutn">Investir</button> -->
+      <ion-button expand="block" class="boutn" >Investir</ion-button>
+    </div>
+    <!-- fin du card  -->
+  </div>
 </ion-content>
