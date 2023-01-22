@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profil.page.scss'],
 })
 export class ProfilPage implements OnInit {
+  presentingElement: any;
 
   constructor() { }
 
   ngOnInit() {
+    this.presentingElement = document.querySelector('.ion-page');
+  
   }
 
 }
