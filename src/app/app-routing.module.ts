@@ -95,6 +95,18 @@ const routes: Routes = [
   {
     path: 'detailprojet',
     loadChildren: () => import('./Invest/detailprojet/detailprojet.module').then( m => m.DetailprojetPageModule)
+  },
+  {
+    path: 'paiement-don',
+    loadChildren: () => import('./Invest/paiement-don/paiement-don.module').then( m => m.PaiementDonPageModule)
+  },
+  {
+    path: 'paiement-action',
+    loadChildren: () => import('./Invest/paiement-action/paiement-action.module').then( m => m.PaiementActionPageModule)
+  },
+  {
+    path: 'paiementpret',
+    loadChildren: () => import('./Invest/paiementpret/paiementpret.module').then( m => m.PaiementpretPageModule)
   }
 ];
 @NgModule({

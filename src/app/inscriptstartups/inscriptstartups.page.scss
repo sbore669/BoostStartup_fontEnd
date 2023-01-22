@@ -1,10 +1,10 @@
-// .mat-stepper-vertical {
-//     margin-top: 8px;
-// }
+.mat-stepper-vertical {
+    margin-top: 8px;
+}
 
-// .mat-mdc-form-field {
-//     margin-top: 16px;
-// }
+.mat-mdc-form-field {
+    margin-top: 16px;
+}
 hr {
     border: #38B6FF;
     clear: both;
@@ -40,4 +40,7 @@ button.mat-stepper-next {
     border-radius: 15px;
     height: 40px;
     color: #fff;
+}
+mat-step{
+    margin-top: 20px;
 }
