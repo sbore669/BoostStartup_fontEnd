@@ -9,6 +9,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgChartsModule } from 'ng2-charts';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { httpInterceptorProviders } from './_helpers/http.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,11 +19,12 @@ import { NgChartsModule } from 'ng2-charts';
     AppRoutingModule,    
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    NgChartsModule
+    NgChartsModule,
+    HttpClientModule,
     
 
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy},httpInterceptorProviders],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
