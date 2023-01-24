@@ -42,7 +42,7 @@ export class AuthService {
     formData.append('file', file);
     formData.append('donneesstartups', JSON.stringify(startups));
 
-    return this.http.post<any>(`${AUTH_API}/inscrpStart/`, formData);
+    return this.http.post<any>(`${AUTH_API}/inscrpStart`, formData);
   }
 
   // registerStartups(username: string, email: string, password: string, nomcomplet:string, adresse:string, photo:string,

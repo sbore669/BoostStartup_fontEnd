@@ -9,117 +9,108 @@
         <hr class="border-primary">
       </div>
     </div>
-    <!-- Stepper etapes par etapes -->
-
-    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
-      <mat-step [stepControl]="firstFormGroup">
-        
-        <form class="form">
-          <ng-template matStepLabel>Informations de l'utilisateurs</ng-template>
-          <ng-template matStepContent class="cont">
-            <div class="mt-1 contentinput">
-              <ion-item>
-                <ion-input type="text" placeholder="Nom complet"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="tel" maxlength="8" placeholder="Numero de Telephone"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="text" placeholder="Pseudo"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="text" placeholder="Adresse"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="email" placeholder="Email"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="password" placeholder="Mots de passe"></ion-input>
-              </ion-item>
-            </div>
-            <div>
-              <button mat-raised-button color="primary" matStepperNext>Suivants</button>
-            </div>
-          </ng-template>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
-        <form>
-          <ng-template matStepLabel>Informations de la Startups</ng-template>
-          <ng-template matStepContent>
-            <ion-item>
-              <ion-input type="text" placeholder="Nom de la Startups"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="tel" maxlength="8" placeholder="Contact"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="text" placeholder="Stade developpement"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="text" placeholder="Numero d'identification"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="email" placeholder="description"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="password" placeholder="Proprietaire"></ion-input>
-            </ion-item>
-            <div class="d-flex justify-content-between">
-              <div class="">
-                <button mat-button matStepperPrevious>Precedents</button>
-              </div>
-              <div class="">
-                <button mat-raised-button color="primary" matStepperNext>Suivants</button>
-              </div>
-            </div>
-          </ng-template>
-
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
-        <form>
-          <ng-template matStepLabel>Fill out your address</ng-template>
-          <ng-template matStepContent>
-            <ion-item>
-              <ion-input type="text" placeholder="Forme juridique"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="tel" maxlength="8" placeholder="Chiffre d'affaire"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="text" placeholder="Localisation"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input type="text" placeholder="Pays"></ion-input>
-            </ion-item>
-            <ion-item>
-              <input type="file" placeholder="photo">
-            </ion-item>
-            <div class="d-flex justify-content-between">
-              <div class="">
-                <button mat-button matStepperPrevious>Precedents</button>
-              </div>
-              <div class="">
-                <button mat-raised-button color="primary" matStepperNext>Suivants</button>
-              </div>
-            </div>
-          </ng-template>
-
-        </form>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Fin</ng-template>
-        <p class="mt-5">Pour la validation de votre espaces toutes les cases doivent etres renseigner</p>
-        <div class="d-flex justify-content-between">
-          <div class="">
-            <button mat-button matStepperPrevious>Precedents</button>
-          </div>
+    <!-- formulaire djadje -->
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+      <div [hidden]="!suivant">
+        <ion-list>
+          <ion-item>
+            <ion-input type="text" placeholder="Nom complet" name="nomcomplet"
+              [(ngModel)]="startups.nomcomplet"></ion-input>
+          </ion-item>
+          <!-- <ion-item>
+            <ion-input type="tel" maxlength="8" placeholder="Numero de Telephone" name="telephone" [(ngModel)]="startups.telephone"></ion-input>
+          </ion-item> -->
+          <ion-item>
+            <ion-input type="text" placeholder="Pseudo" name="username" [(ngModel)]="startups.username"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Adresse" name="adresse" [(ngModel)]="startups.adresse"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="startups.email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" placeholder="Mots de passe" name="password"
+              [(ngModel)]="startups.password"></ion-input>
+          </ion-item>
+        </ion-list>
+        <div class="d-flex justify-content-center mt-3 btnn">
+          <a class="btn" (click)="nextStep()">Suivant</a>
         </div>
-        <ion-button expand="block" routerLink="/validation" style="margin-top: 20px;">S'inscrire</ion-button>
-      </mat-step>
-    </mat-stepper>
+      </div>
+  
+      <!-- 2eme etapes du formulaire -->
+  
+      <div *ngIf="step === 2" [hidden]="suivant">
+        <ion-list>
+  
+          <ion-item>
+            <ion-input type="text" placeholder="Nom de la Startups" name="nomStartups"
+              [(ngModel)]="startups.nomStartups"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="tel" maxlength="8" placeholder="Contact" name="contact"
+              [(ngModel)]="startups.contact"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Stade developpement" name="emailStartups"
+              [(ngModel)]="startups.emailStartups"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="secteurActivite" name="secteurActivite"
+              [(ngModel)]="startups.secteurActivite"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="email" placeholder="description" name="descriptionStartups"
+              [(ngModel)]="startups.descriptionStartups"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Proprietaire" name="proprietaire"
+              [(ngModel)]="startups.proprietaire"></ion-input>
+          </ion-item>
+        </ion-list>
+        <div class="d-flex justify-content-around mt-3 btnn">
+          <a class="btn btn-r" (click)="backStep()">retour</a>
+          <a class="btn" (click)="nextStep()">Suivant</a>
+        </div>
+      </div>
+  
+  
+      <div  *ngIf="step === 3" [hidden]="suivant">
+        <ion-list>
+          <ion-item>
+            <ion-input type="Date" placeholder="Date Creation" name="dateCreation"
+              [(ngModel)]="startups.dateCreation"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Forme juridique" name="formeJuridique"
+              [(ngModel)]="startups.formeJuridique"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="tel" maxlength="8" placeholder="Chiffre d'affaire" name="chiffreAffaire"
+              [(ngModel)]="startups.chiffreAffaire"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Localisation" name="Localisation"
+              [(ngModel)]="startups.localisation"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Pays" name="pays" [(ngModel)]="startups.pays"></ion-input>
+          </ion-item>
+          <ion-item>
+            <input type="file" placeholder="photo" (change)="onFileSelected($event)" name="photo">
+          </ion-item>
+        </ion-list>
+        <div class="d-flex justify-content-around mt-3 btnn">
+          <a class="btn btn-r" (click)="backStep()">retour</a>
+          <ion-button expand="block" type="submit">S'inscrire</ion-button>
+          
+        </div>
+  
+      </div>
+    </form>
+    <!-- fin djadje -->
 
-    <!-- fin du stepper etapes par etapes -->
+
   </div>
 </ion-content>

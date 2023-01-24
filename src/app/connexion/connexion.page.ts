@@ -19,13 +19,16 @@ export class ConnexionPage implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private storageService: StorageService,private router: Router) { }
+  constructor(private authService: AuthService, private storageService: StorageService, private router: Router) { }
 
-  
+
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
       this.roles = this.storageService.getUser().roles;
+      if (this.isLoggedIn) {
+        this.router.navigateByUrl('/acceuil')
+      }
     }
   }
 
@@ -38,8 +41,9 @@ export class ConnexionPage implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
+        this.router.navigate(['/tabac/acceuil']);
         this.roles = this.storageService.getUser().roles;
-        this.reloadPage();
+        //this.reloadPage();
       },
       error: err => {
         this.errorMessage = err.error.message;

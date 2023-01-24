@@ -21,6 +21,8 @@ import { AuthService } from '../_services/auth.service';
 
 export class InscriptstartupsPage implements OnInit {
 
+  suivant: boolean = true;
+
   form: any = {
     username:null,
     email:null,
@@ -47,19 +49,29 @@ export class InscriptstartupsPage implements OnInit {
 
   startups: Startups = new Startups();
 
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
+  // firstFormGroup = this._formBuilder.group({
+  //   firstCtrl: ['', Validators.required],
+  // });
+  // secondFormGroup = this._formBuilder.group({
+  //   secondCtrl: ['', Validators.required],
+  // });
 
 
   isLinear = false;
 
-  constructor(private _formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor( private authService: AuthService, private router: Router) { }
+
+  step = 1;
 
   ngOnInit() {
+  }
+  nextStep(){
+    this.suivant = false;
+    this.step++;
+  }
+  backStep(){
+    this.suivant = true;
+    this.step--;
   }
 
   onFileSelected(event: any) {
@@ -67,13 +79,14 @@ export class InscriptstartupsPage implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    
     this.authService.registerStartups(this.selectedFile, this.startups)
-      .subscribe(res => {
+      .subscribe( res => {
         console.log(res);
-        if (res.success) {
-          this.router.navigate(['/tabs/dashbord-start']);
+        if (res.message == "Startup cree avec succès!") {
+          this.router.navigate(['/validation']);
         } else {
-          console.log(res.message);
+          console.log("erreur");
         }
       });
   }

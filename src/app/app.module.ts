@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { NgChartsModule } from 'ng2-charts';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
+import { GuardsGuard } from './_services/guards.guard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,7 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
     
 
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy},httpInterceptorProviders],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy},httpInterceptorProviders,GuardsGuard],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

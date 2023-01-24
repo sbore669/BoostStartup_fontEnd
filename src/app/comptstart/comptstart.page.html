@@ -7,19 +7,33 @@
       <h1 style="text-align: center;">Espace Startups</h1>
       <hr class="border-primary">
     </div>
-    <form>
+    <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="inputtype mt-0">
         <ion-item class="item-has-focus">
-          <ion-input type="email" placeholder="Pseudo"></ion-input>
+          <ion-input type="text" placeholder="Pseudo" name="username" [(ngModel)]="form.username" required
+          #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.errors }" placeholder="Pseudo"></ion-input>
         </ion-item>
         <ion-item class="item-has-focus">
-          <ion-input type="password" placeholder="Mots de passe"></ion-input>
+          <ion-input type="password" name="password" [(ngModel)]="form.password" placeholder="Mots de passe" required
+          minlength="6" #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }"></ion-input>
         </ion-item>
+      </div>
+      <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+        <div *ngIf="password.errors['required']">Password is required</div>
+        <div *ngIf="password.errors['minlength']">
+          Password must be at least 6 characters
+        </div>
       </div>
       <div class="mt-2 me-3 mdepss">
         <a href="" class="text-decoration-none">Mots de passe oublié ?</a>
       </div>
-      <ion-button expand="block" type="submit" style="margin-top: 20px;" routerLink="/tabs/dashbord-start">S'authentifier</ion-button>
+      <ion-button expand="block" type="submit" style="margin-top: 20px;">S'authentifier</ion-button>
+      <div class="form-group">
+        <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+          Login failed: {{ errorMessage }}
+        </div>
+      </div>
     </form>
     <div class="mt-3 foot">
         <div class="vnpc">Vous n'avez pas de compte ?</div>

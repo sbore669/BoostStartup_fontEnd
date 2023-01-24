@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ConnexionPage } from './connexion/connexion.page';
+import { GuardsGuard } from './_services/guards.guard';
 
 const routes: Routes = [
   {
@@ -7,7 +9,7 @@ const routes: Routes = [
     path: '',
     redirectTo:'debut',
     pathMatch:'full'
-    // loadChildren: () => import('./debut/debut.module').then( m => m.DebutPageModule)
+    // loadChildren: () => import('./debut/debut.module').then( m => m.DebutPageModule),canActivate: [GuardsGuard]
   },
   {
     path: 'connexion',
@@ -70,7 +72,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./tabac/tabac.module').then( m => m.TabacPageModule)
+    loadChildren: () => import('./tabac/tabac.module').then( m => m.TabacPageModule),canActivate: [GuardsGuard]
   },
   {
     path: 'acceuil',

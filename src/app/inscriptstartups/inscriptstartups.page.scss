@@ -23,24 +23,12 @@ hr {
 // .next{
 //     background-color: #38B6FF !important;
 // }
-button.mat-stepper-previous {
-    border: 1px deepskyblue solid;
-    width: 31vw;
-    margin-top: 15%;
-    background: #38b6ff;
-    border-radius: 15px;
-    height: 40px;
-    color: #fff;
+
+
+
+a.btn {
+    background: #3a6fe6;
 }
-button.mat-stepper-next {
-    border: 1px deepskyblue solid;
-    width: 30vw;
-    margin-top: 15%;
-    background: #38b6ff;
-    border-radius: 15px;
-    height: 40px;
-    color: #fff;
-}
-mat-step{
-    margin-top: 20px;
+a.btn-r{
+    background: #615b5b;
 }
