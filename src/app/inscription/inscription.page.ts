@@ -46,7 +46,7 @@ export class InscriptionPage implements OnInit {
       .subscribe(res => {
         console.log(res);
         if (res.success) {
-          this.router.navigate(['/acceuil']);
+          this.router.navigate(['/tabac/acceuil']);
         } else {
           console.log(res.message);
         }
