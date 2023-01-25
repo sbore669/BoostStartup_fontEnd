@@ -45,38 +45,6 @@ export class AuthService {
     return this.http.post<any>(`${AUTH_API}/inscrpStart`, formData);
   }
 
-  // registerStartups(username: string, email: string, password: string, nomcomplet:string, adresse:string, photo:string,
-  //   nomStartups:string, contact:string, emailStartups:string, secteurActivite:string, stadeDeveloppement:string,
-  //   numeroIdentification:string, descriptionStartups:string, dateCreation:string, proprietaire:string,
-  //   formeJuridique:string, chiffreAffaire:string, localisation:string, pays:string, status:string): Observable<any> {
-  //   return this.http.post(
-  //     AUTH_API + 'signup',
-  //     {
-  //       username,
-  //       email,
-  //       password,
-  //       nomcomplet,
-  //       adresse,
-  //       photo,
-  //       nomStartups,
-  //       contact,
-  //       emailStartups,
-  //       secteurActivite,
-  //       stadeDeveloppement,
-  //       numeroIdentification,
-  //       descriptionStartups,
-  //       dateCreation,
-  //       proprietaire,
-  //       formeJuridique,
-  //       chiffreAffaire,
-  //       localisation,
-  //       pays,
-  //       status
-  //     },
-  //     httpOptions
-  //   );
-  // }
-
   logout(): Observable<any> {
     // return this.http.post(
     //   AUTH_API + 'logout',{},httpOptions

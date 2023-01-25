@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProjetsService } from 'src/app/_services/projets.service';
 
 @Component({
   selector: 'app-detailprojet',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailprojetPage implements OnInit {
 
-  constructor() { }
+  detailsProjets:any
+
+  constructor(private projetsService: ProjetsService, private router: Router,
+    private routes : ActivatedRoute
+    ) { }
 
   ngOnInit() {
+    this.recupererProjetDetails();
+  }
+
+  recupererProjetDetails(){
+    const idprojet = this.routes.snapshot.params['idprojet'];
+    console.log(idprojet);
+    this.projetsService.recupererProjetsparId(idprojet).subscribe(data =>{
+      this.detailsProjets = data
+      console.log(this.detailsProjets);
+    });
   }
 
 }

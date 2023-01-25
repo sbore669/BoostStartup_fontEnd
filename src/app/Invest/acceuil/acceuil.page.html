@@ -8,49 +8,48 @@
   <div class="cardMere">
     <div class="card1">
       <!-- debut 1er card  -->
-      <ion-card class="cardprojets">
-        <img src="/assets/images/projets.jpg" class="imageproj" alt="" srcset="">
+      <ion-card class="cardprojets"   *ngFor="let projets of projets">
+        <img src="{{projets.image}}" class="imageproj" alt="" srcset="">
         <div class="d-flex  align-items-center mt-1 ms-2">
           <div class="phtprojet">
-            <img src="/assets/images/logost.jpg" class="logcv" alt="" srcset="">
+            <img src="{{projets.photo}}" class="logcv" alt="" srcset="">
           </div>
-          <div class="ms-2 nomstartp">Vollaile+</div>
+          <div class="ms-2 nomstartp">{{projets.nonomStartups}}+</div>
         </div>
         <ion-card-header>
           <ion-card-subtitle class="d-flex justify-content-between align-items-center statnon">
-            <div class=""><ion-icon name="folder-open-outline"></ion-icon>Agriculture</div>
-            <div class="etatss">disponible</div>
+            <div class=""><ion-icon name="folder-open-outline"></ion-icon>{{projets.statProjets}}</div>
+            <div class="etatss">{{projets.statProjets}}</div>
           </ion-card-subtitle>
-          <ion-card-title class="nomprj">My Farming - Application de suivie et production des volaille</ion-card-title>
+          <ion-card-title class="nomprj">{{projets.nomprojets}}</ion-card-title>
         </ion-card-header>
 
         <ion-card-content class="descript">
-          Application Gestion de la production et commercialisation des poulets de chair, pondeuses, œufs, poussins et
-          leurs nourritures
+          {{projets.description}}
           <hr class="border-primary">
           <div class="detailsfin">
             <div class="d-flex justify-content-around">
               <p>Objectifs :</p>
-              <p>5 000 000 XOF</p>
+              <p>{{projets.budgetPrevisonnel}}</p>
             </div>
             <div class="d-flex justify-content-around">
               <p>Collecté :</p>
-              <p>13 000 000 XOF</p>
+              <p>{{projets.soldeprojet}}</p>
             </div>
             <div class="d-flex justify-content-around">
-              <p>Nombre d'Investisseur :</p>
-              <p>2600</p>
+              <p>Action_restante :</p>
+              <p>{{projets.action_restante}}</p>
             </div>
           </div>
           <div class="mx-5 mt-2">
-            <button type="button" routerLink="/detailprojet" class="btn btn-primary boutn">details</button>
+            <button type="button" routerLink="/detailprojet/{{projets.idprojet}}" class="btn btn-primary boutn">details</button>
           </div>
 
         </ion-card-content>
       </ion-card>
       <!-- fin 1 du card -->
       <!-- debut 2 du card -->
-      <ion-card class="cardprojets">
+      <!-- <ion-card class="cardprojets">
         <img src="/assets/images/projets.jpg" class="imageproj" alt="" srcset="">
         <div class="d-flex  align-items-center mt-1 ms-2">
           <div class="phtprojet">
@@ -89,10 +88,10 @@
           </div>
 
         </ion-card-content>
-      </ion-card>
+      </ion-card> -->
       <!-- fin 2 du card -->
       <!-- debut 3 du card -->
-      <ion-card class="cardprojets">
+      <!-- <ion-card class="cardprojets">
         <img src="/assets/images/projets.jpg" class="imageproj" alt="" srcset="">
         <div class="d-flex  align-items-center mt-1 ms-2">
           <div class="phtprojet">
@@ -131,7 +130,7 @@
           </div>
 
         </ion-card-content>
-      </ion-card>
+      </ion-card> -->
       <!-- fin du card -->
     </div>
 

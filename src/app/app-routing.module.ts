@@ -95,7 +95,7 @@ const routes: Routes = [
     loadChildren: () => import('./Invest/profil/profil.module').then( m => m.ProfilPageModule)
   },
   {
-    path: 'detailprojet',
+    path: 'detailprojet/:idprojet',
     loadChildren: () => import('./Invest/detailprojet/detailprojet.module').then( m => m.DetailprojetPageModule)
   },
   {

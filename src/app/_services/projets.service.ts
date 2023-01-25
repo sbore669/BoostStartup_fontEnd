@@ -30,4 +30,17 @@ export class ProjetsService {
 
     return this.http.post<any>(`${AUTH_API}/add/${id_users}/${Idtypeprojets}`, formData);
   }
+
+  //Methode pour recuperrer tout les projets
+
+  listdesprojets(): Observable<any> {
+
+    return this.http.get(`${AUTH_API}/afficher`);
+  }
+
+  //Methode pour recuperer un projets par id
+  recupererProjetsparId(idprojet: any): Observable<any> {
+    return this.http.get(`${AUTH_API}/aff/${idprojet}`);
+  }
+  
 }
