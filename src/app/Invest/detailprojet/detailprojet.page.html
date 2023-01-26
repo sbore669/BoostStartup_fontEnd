@@ -141,9 +141,9 @@
         <ion-label>Quel type d'investissement souhaitez vous faire ?</ion-label>
       </div>
       <div class="mt-5 typeinvest"> [routerLink]="['/detailprojet',projets.idprojet]"
-        <div class="mt-3 fdon"><ion-button expand="block" class="boutn" [routerLink]="['/paiement-don',idprojet]"
+        <div class="mt-3 fdon"><ion-button expand="block" class="boutn" [routerLink]="['/paiement-don',currentUser.id,idprojet]"
             (click)="modal.dismiss()">Faire un don</ion-button></div>
-        <div class="mt-3 fdon"><ion-button expand="block" class="boutn" [routerLink]="['/paiementpret',idprojet]"
+        <div class="mt-3 fdon"><ion-button expand="block" class="boutn" [routerLink]="['/paiementpret',currentUser.id,idprojet]"
             (click)="modal.dismiss()">Faire un Prêt</ion-button></div>
         <div class="mt-3 fdon"><ion-button expand="block" class="boutn" [routerLink]="['/paiement-action/',currentUser.id,idprojet]"
             (click)="modal.dismiss()">Acquérir des Actions</ion-button></div>
