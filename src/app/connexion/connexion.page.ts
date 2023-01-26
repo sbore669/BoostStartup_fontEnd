@@ -23,13 +23,13 @@ export class ConnexionPage implements OnInit {
 
 
   ngOnInit(): void {
-    if (this.storageService.isLoggedIn()) {
-      this.isLoggedIn = true;
-      this.roles = this.storageService.getUser().roles;
-      if (this.isLoggedIn) {
-        this.router.navigateByUrl('/acceuil')
-      }
-    }
+    // if (this.storageService.isLoggedIn()) {
+    //   this.isLoggedIn = true;
+    //   this.roles = this.storageService.getUser().roles;
+    //   if (this.isLoggedIn) {
+    //     this.router.navigateByUrl('/acceuil')
+    //   }
+    // }
   }
 
   onSubmit(): void {

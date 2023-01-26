@@ -7,29 +7,28 @@
 
 <ion-content>
   <div class="container">
-    <img src="/assets/images/projets.jpg" class="imageproj" alt="" srcset="">
+    <img src="{{image}}" class="imageproj" alt="" srcset="">
     <div class="d-flex  align-items-center mt-1 ms-2">
       <div class="phtprojet">
-        <img src="/assets/images/logost.jpg" class="logcv" alt="" srcset="">
+        <img src="{{image}}" class="logcv" alt="" srcset="">
       </div>
-      <div class="ms-2 nomstartp">Vollaile+</div>
+      <div class="ms-2 nomstartp">{{nomStartups}} </div>
     </div>
     <ion-card-header>
       <ion-card-subtitle class="d-flex" style="margin-bottom: 5%;">
-        <div class="" style="display: flex;"><ion-icon name="folder-open-outline" style="font-size: 2em;"></ion-icon > &nbsp; <span style="margin-top: 4%;">Agriculture</span> </div>
-          <div class="etats">
-            <div style="margin-top: 5% !important;"><span >disponible</span> </div>
-          </div>
+        <div class="" style="display: flex;"><ion-icon name="folder-open-outline" style="font-size: 2em;"></ion-icon>
+          &nbsp; <span style="margin-top: 4%;">Agriculture</span> </div>
+        <div class="etats">
+          <div style="margin-top: 5% !important;"><span>{{statProjets}}</span> </div>
+        </div>
       </ion-card-subtitle>
-      <ion-card-title class="nomprj">My Farming - Application de suivie et production des volaille</ion-card-title>
+      <ion-card-title class="nomprj">{{nomprojets}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content class="descript">
-      Application Gestion de la production et commercialisation des poulets de chair, pondeuses, œufs, poussins et
-      leurs nourritures
+      {{description}}
       <!-- lieu pour les collapse -->
       <hr class="border-primary">
-
     </ion-card-content>
     <!-- debut part  -->
     <div class="card w-100 mb-2">
@@ -52,15 +51,15 @@
           </div>
           <div class="d-flex justify-content-between">
             <p class="text-muted">Budget:</p>
-            <p>5 000 000 XOF</p>
+            <p>{{budgetPrevisonnel}}</p>
           </div>
           <div class="d-flex justify-content-between">
             <p class="text-muted">Total collecté :</p>
-            <p>01/01/2023</p>
+            <p>{{soldeprojet}}</p>
           </div>
           <div class="d-flex justify-content-between">
             <p class="text-muted">Durée du projet :</p>
-            <p>2 ans</p>
+            <p>{{dureeProjet}}</p>
           </div>
           <!-- <hr class="border-primary"> -->
         </div>
@@ -81,15 +80,15 @@
         <div class="detailsfin">
           <div class="d-flex justify-content-between">
             <p class="text-muted">Prix d'une action :</p>
-            <p>5000 XOF</p>
+            <p>{{prix_action}}</p>
           </div>
           <div class="d-flex justify-content-between">
             <p class="text-muted">Total actions:</p>
-            <p>01/08/2022</p>
+            <p>{{nbretotal_action}}</p>
           </div>
           <div class="d-flex justify-content-between">
             <p class="text-muted">Action disponible:</p>
-            <p>0</p>
+            <p>{{action_restante}}</p>
           </div>
           <!-- <hr class="border-primary"> -->
         </div>
@@ -110,15 +109,15 @@
         <div class="detailsfin">
           <div class="d-flex justify-content-between">
             <p class="text-muted">Pourcentage :</p>
-            <p>5 % </p>
+            <p>{{pourcentage}}</p>
           </div>
           <div class="d-flex justify-content-between">
             <p class="text-muted">Prêt minimun :</p>
-            <p>20 000</p>
+            <p>{{pret_minimun}}</p>
           </div>
           <div class="d-flex justify-content-between">
             <p class="text-muted">Prêt maximun:</p>
-            <p>0</p>
+            <p>{{pret_maximun}}</p>
           </div>
           <!-- <hr class="border-primary"> -->
         </div>
@@ -128,6 +127,7 @@
     </div>
     <div class="mt-5 mb-5 ion-text-center">
       <!-- <button type="button" routerLink="/" class="btn btn-primary boutn">Investir</button> -->
+      <!-- <button type="button" [routerLink]="['/detailprojet',projets.idprojet]" class="btn btn-primary boutn">details</button> -->
       <ion-button expand="block" class="boutn" id="open-modal">Investir</ion-button>
     </div>
     <!-- fin du card  -->
@@ -140,12 +140,12 @@
       <div class="ion-margin-top text-center">
         <ion-label>Quel type d'investissement souhaitez vous faire ?</ion-label>
       </div>
-      <div class="mt-5 typeinvest">
-        <div class="mt-3 fdon"><ion-button expand="block" class="boutn" routerLink="/paiement-don"
+      <div class="mt-5 typeinvest"> [routerLink]="['/detailprojet',projets.idprojet]"
+        <div class="mt-3 fdon"><ion-button expand="block" class="boutn" [routerLink]="['/paiement-don',idprojet]"
             (click)="modal.dismiss()">Faire un don</ion-button></div>
-        <div class="mt-3 fdon"><ion-button expand="block" class="boutn" routerLink="/paiement-action"
+        <div class="mt-3 fdon"><ion-button expand="block" class="boutn" [routerLink]="['/paiementpret',idprojet]"
             (click)="modal.dismiss()">Faire un Prêt</ion-button></div>
-        <div class="mt-3 fdon"><ion-button expand="block" class="boutn" routerLink="/paiementpret"
+        <div class="mt-3 fdon"><ion-button expand="block" class="boutn" [routerLink]="['/paiement-action/',currentUser.id,idprojet]"
             (click)="modal.dismiss()">Acquérir des Actions</ion-button></div>
       </div>
     </ion-content>

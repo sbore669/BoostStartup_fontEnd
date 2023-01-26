@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: AcceuilPage
-  }
+  },
+  // {
+  //   path: 'detailprojet/:idprojet',
+  //   loadChildren: () => import('../../Invest/detailprojet/detailprojet.module').then( m => m.DetailprojetPageModule)
+  // },
 ];
 
 @NgModule({

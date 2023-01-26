@@ -17,7 +17,7 @@ export class AcceuilPage implements OnInit {
 
     this.projetsService.listdesprojets().subscribe(data => {
       this.projets = data;
-      console.log(data);
+     // console.log(data);
     })
   }
 
