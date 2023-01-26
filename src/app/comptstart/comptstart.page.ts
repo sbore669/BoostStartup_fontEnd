@@ -24,10 +24,11 @@ export class ComptstartPage implements OnInit {
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
-      this.roles = this.storageService.getUser().roles;
-      if (this.isLoggedIn) {
-        this.router.navigateByUrl('/acceuil')
-      }
+       this.roles[0]=='ROLE_STARTUPS'
+        this.storageService.saveUser(this.roles);
+      // if (this.isLoggedIn) {
+        this.router.navigateByUrl('/tabs/dashbord-start')
+      // }
     }
   }
 
@@ -36,12 +37,21 @@ export class ComptstartPage implements OnInit {
 
     this.authService.login(username, password).subscribe({
       next: data => {
-        this.storageService.saveUser(data);
-        console.log(data);
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.router.navigate(['/tabs/dashbord-start']);
-        this.roles = this.storageService.getUser().roles;
+       
+
+        if(data.roles[0]=='ROLE_STARTUPS'){
+          this.storageService.saveUser(data);
+          console.log(data);
+          this.isLoginFailed = false;
+          this.isLoggedIn = true;
+          this.router.navigate(['/tabs/dashbord-start']);
+        }else{
+          this.errorMessage = 'Pas Autoriser ';
+          this.isLoginFailed = true;
+          
+        }
+
+        //this.roles = this.storageService.getUser().roles;
         //this.reloadPage();
       },
       error: err => {

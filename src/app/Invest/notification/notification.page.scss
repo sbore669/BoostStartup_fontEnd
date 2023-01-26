@@ -1,23 +1,44 @@
-img{
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-p.nomstart {
-    font-size: 15px;
-    font-weight: 600;
-}
-p.messges {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 13px;
-    font-weight: 400;
-}
-p.delais {
-    font-size: 12px;
+// img{
+//     width: 60px;
+//     height: 60px;
+//     object-fit: cover;
+//     border-radius: 10px;
+// }
+// p.nomstart {
+//     font-size: 15px;
+//     font-weight: 600;
+// }
+// p.messges {
+//     margin-top: 0;
+//     margin-bottom: 0;
+//     font-size: 13px;
+//     font-weight: 400;
+// }
+// p.delais {
+//     font-size: 12px;
+// }
+// .card{
+//     border-radius: 5px;
+//     box-shadow: inset 0px 0px 3px 0px;
+// }
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+	background-color: #E6EAF5;
+	font-family: 'Roboto', sans-serif;
 }
 .card{
-    border-radius: 5px;
-    box-shadow: inset 0px 0px 3px 0px;
+	width: 100%;
+	border: none;
+	border-radius: 15px;
+	background-color: #597AFD;
+}
+h6{
+	color: #E5F3FF;
+}
+.text{
+	color: #B2C9FF;
+}
+.notif{
+    font-size: 10px;
 }
