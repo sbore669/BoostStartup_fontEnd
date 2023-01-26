@@ -1,6 +1,14 @@
 .imaacc{
     width: 300px;
     height: 300px;
+    object-fit: cover;
+}
+.prixmtt {
+    background: #7ed957;
+    border-radius: 15px;
+    width: 30%;
+    text-align: center;
+    color: white;
 }
 span {
     font-size: 20px;
@@ -8,7 +16,7 @@ span {
     margin-top: 10px;
 }
 h1 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
 }
 ion-button {

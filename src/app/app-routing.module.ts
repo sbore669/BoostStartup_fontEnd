@@ -99,7 +99,7 @@ const routes: Routes = [
     loadChildren: () => import('./Invest/detailprojet/detailprojet.module').then( m => m.DetailprojetPageModule)
   },
   {
-    path: 'paiement-don',
+    path: 'paiement-don/:id_users/:idprojet',
     loadChildren: () => import('./Invest/paiement-don/paiement-don.module').then( m => m.PaiementDonPageModule)
   },
   {
@@ -107,7 +107,7 @@ const routes: Routes = [
     loadChildren: () => import('./Invest/paiement-action/paiement-action.module').then( m => m.PaiementActionPageModule)
   },
   {
-    path: 'paiementpret',
+    path: 'paiementpret/:id_users/:idprojet',
     loadChildren: () => import('./Invest/paiementpret/paiementpret.module').then( m => m.PaiementpretPageModule)
   }
 ];

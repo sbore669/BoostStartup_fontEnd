@@ -34,6 +34,7 @@ export class PaiementActionPage implements OnInit {
   prix_action: any;
   nomStartups: any;
   idprojetSelect:any;
+  apayer:any
 
 
   constructor(private router: Router,private actionService: ActionService,
@@ -45,6 +46,7 @@ export class PaiementActionPage implements OnInit {
     this.currentUser = this.storageService.getUser();
     this.recupererProjetDetails();
   }
+  
 
 
   recupererProjetDetails() {
