@@ -43,14 +43,16 @@ export class InscriptionPage implements OnInit {
 
   onSubmit(form: NgForm) {
     this.authService.registerInvestisseur(this.Idtypeprojets, this.selectedFile, this.investisseur)
-      .subscribe(res => {
-        console.log(res);
-        if (res.success) {
+      .subscribe({
+        next : response => {
+          console.log(response)
           this.router.navigate(['/tabac/acceuil']);
-        } else {
-          console.log(res.message);
+        },
+        error : err => {
+          console.log(err)
         }
-      });
+      })
+      
   }
 }
 

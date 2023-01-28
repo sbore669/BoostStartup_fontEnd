@@ -23,6 +23,7 @@ import { GuardsGuard } from './_services/guards.guard';
     NgChartsModule,
     HttpClientModule,
     
+    
 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy},httpInterceptorProviders,GuardsGuard],
