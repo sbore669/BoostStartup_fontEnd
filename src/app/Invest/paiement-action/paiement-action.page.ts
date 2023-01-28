@@ -54,16 +54,12 @@ export class PaiementActionPage implements OnInit {
     console.log(this.idprojetSelect + 'yyyyyyyyyyyyyyyyyyyyyyiddd');
     this.projetsService.recupererProjetsparId(this.idprojetSelect).subscribe(data => {
     this.detailsProjets = data
-
-      
+    
       console.log(this.detailsProjets);
       this.nomprojets = this.detailsProjets.nomprojets
       this.action_restante = this.detailsProjets.action_restante
-
-
       this.description = this.detailsProjets.description
       this.donationtotalobtenu = this.detailsProjets.donationtotalobtenu
-
       this.idprojet = this.detailsProjets.idprojet
       this.image = this.detailsProjets.image
       this.minimun_donation = this.detailsProjets.minimun_donation
