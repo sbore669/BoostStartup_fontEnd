@@ -5,6 +5,7 @@ import { Projets } from '../Model/projets';
 import { AuthService } from '../_services/auth.service';
 import { ProjetsService } from '../_services/projets.service';
 import { StorageService } from '../_services/storage.service';
+import { TypeprojetsService } from '../_services/typeprojets.service';
 
 @Component({
   selector: 'app-dashbord-start',
@@ -22,15 +23,17 @@ export class DashbordStartPage implements OnInit {
   Idtypeprojets!: number;
   id_users!: number;
   
-  
-  typesProjet: any[] = [{ id: 1, name: "Type 1" }, { id: 2, name: "Type 2" }, { id: 3, name: "Type 3" }];
+
   
   step = 1;
+  typesProjet: any;
   
 
   constructor(private authService: AuthService,
      private storageService: StorageService,
-     private router: Router,private projetsService: ProjetsService) { }
+     private router: Router,
+     private projetsService: ProjetsService,
+     private typeprojets: TypeprojetsService) { }
 
   
 
@@ -38,6 +41,10 @@ export class DashbordStartPage implements OnInit {
     this.currentUser = this.storageService.getUser();
     this.presentingElement = document.querySelector('.ion-page');
     console.log(this.currentUser);
+    this.typeprojets.listetypeprojets().subscribe(data =>{
+      this.typesProjet = data
+      console.log(data)
+    })
   }
   nextStep(){
     this.suivant = false;

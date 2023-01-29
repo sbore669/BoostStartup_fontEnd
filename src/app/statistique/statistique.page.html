@@ -1,3 +1,13 @@
+<ion-header>
+  <div class="d-flex justify-content-between ent">
+    <div>
+      <img src="{{currentUser.photo}}" class="circle" alt="" srcset="">
+    </div>
+    <div class="">
+      <H1 class="tittttre">Dashboard</H1>
+    </div>
+  </div>
+</ion-header>
 <ion-content>
   <img src="/assets/images/Chart 9.svg" alt="" srcset="">
   <!-- <canvas baseChart class="chart"
@@ -10,6 +20,7 @@
 </canvas> -->
   <!-- 
 <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button> -->
+<div class="mt-2">
   <ion-row>
     <ion-col>
       <ion-card class="desc" color="primary">
@@ -34,6 +45,8 @@
       </ion-card>
     </ion-col>
   </ion-row>
+</div>
+<div class="mt-1">
   <ion-row>
     <ion-col>
       <ion-card class="desc" color="primary">
@@ -46,11 +59,15 @@
         </div>
       </ion-card>
     </ion-col>
+  </ion-row>
+</div>
+<div class="mt-1">
+  <ion-row>
     <ion-col>
       <ion-card class="desc" color="primary">
         <div class="cardbody">
-          <h6>Postulant</h6>
-          <p class="nbre">300</p>
+          <h6>Entretien</h6>
+          <p class="nbre">10</p>
         </div>
         <div class="cardicon">
           <ion-icon name="person"></ion-icon>
@@ -58,4 +75,6 @@
       </ion-card>
     </ion-col>
   </ion-row>
+</div>
+  
 </ion-content>

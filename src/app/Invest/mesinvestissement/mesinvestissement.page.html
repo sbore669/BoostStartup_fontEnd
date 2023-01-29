@@ -6,14 +6,30 @@
     </div>
   </div>
   <div class="container">
+    <!-- total investissement -->
+    <div class="mt-3">
+      <ion-row>
+        <ion-col>
+          <ion-card class="desc" color="primary">
+            <div class="cardbody">
+              <h6>Total investissement</h6>
+            </div>
+            <div class="cardicon">
+              <p class="nbre">{{inv.totalInvestissement}}</p>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+     <!-- total investissement -->
     <div class="cardi">
       <h3 class="bank"></h3>
       <img src="/assets/images/mony.png" class="mon" alt="" srcset="">
       <img src="/assets/images/puce.png" class="chip" alt="" srcset="">
       <!-- <img src="/assets/images/contactless-indicator.png" class="indicator" alt="" srcset="" /> -->
-      <h3 class="number">+223 82 26 66 93</h3>
+      <h3 class="number">{{inv.telephone}}</h3>
       <h5 class="card-holder">
-        Souleymane Bore
+        {{inv.nomcomplet}}
       </h5>
       <!-- <h5 class="valid"><span>expiry date</span><br />20/30</h5> -->
       <img src="/assets/images/visa.png" class="logo" alt="" srcset="" />
@@ -22,185 +38,185 @@
       <h4>Dernière transaction</h4>
       <!-- contenu scrollable -->
       <div class="inv">
-      <div class="mb-2 don">
-        <div class="card">
-          <div class="row">
-            <div class="col-4">
-              <div class="imgdon">
-                <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
-              </div>
-            </div>
-            <div class="col-6 align-self-center">
-              <div class="row ecrit">Don</div>
-              <div class="row ecrit">Montant: 5000</div>
-              <div class="row ecrit">Date: 01/06/2023</div>
-            </div>
-            <div class="col-2 align-self-center">
-              <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                name="chevron-down-outline"></ion-icon>
-            </div>
-          </div>
-          <!-- debut de la collapse -->
-          <div class="collapse" id="collapseExample">
+        <div class="mb-2 don">
+          <div class="card">
             <div class="row">
               <div class="col-4">
-                <div class="text-center colprojet">Projet:</div>
-                <div class="text-center mt-3 mb-2 colprojet1">Interêt annuelle:</div>
+                <div class="imgdon">
+                  <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
+                </div>
               </div>
-              <div class="col-8">
-                <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
-                <div class="mt-2 colpourct">5%</div>
+              <div class="col-6 align-self-center">
+                <div class="row ecrit">Don</div>
+                <div class="row ecrit">Montant: 5000</div>
+                <div class="row ecrit">Date: 01/06/2023</div>
+              </div>
+              <div class="col-2 align-self-center">
+                <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                  name="chevron-down-outline"></ion-icon>
               </div>
             </div>
-            <!-- fin de la collapse -->
+            <!-- debut de la collapse -->
+            <div class="collapse" id="collapseExample">
+              <div class="row">
+                <div class="col-4">
+                  <div class="text-center colprojet">Projet:</div>
+                  <div class="text-center mt-3 mb-2 colprojet1">Interêt annuelle:</div>
+                </div>
+                <div class="col-8">
+                  <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
+                  <div class="mt-2 colpourct">5%</div>
+                </div>
+              </div>
+              <!-- fin de la collapse -->
+            </div>
           </div>
         </div>
-      </div>
-      <!-- debut part  -->
-      <div class="mb-2 don">
-        <div class="card">
-          <div class="row">
-            <div class="col-4">
-              <div class="imgdon">
-                <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
-              </div>
-            </div>
-            <div class="col-6 align-self-center">
-              <div class="row ecrit">Action</div>
-              <div class="row ecrit">Montant: 5000</div>
-              <div class="row ecrit">Date: 01/06/2023</div>
-            </div>
-            <div class="col-2 align-self-center">
-              <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
-                name="chevron-down-outline"></ion-icon>
-            </div>
-          </div>
-          <!-- debut de la collapse -->
-          <div class="collapse" id="collapseExample1">
+        <!-- debut part  -->
+        <div class="mb-2 don">
+          <div class="card">
             <div class="row">
               <div class="col-4">
-                <div class="text-center colprojet">Projet:</div>
-                <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
+                <div class="imgdon">
+                  <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
+                </div>
               </div>
-              <div class="col-8">
-                <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
-                <div class="mt-2 colpourct">5</div>
+              <div class="col-6 align-self-center">
+                <div class="row ecrit">Action</div>
+                <div class="row ecrit">Montant: 5000</div>
+                <div class="row ecrit">Date: 01/06/2023</div>
+              </div>
+              <div class="col-2 align-self-center">
+                <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                  name="chevron-down-outline"></ion-icon>
               </div>
             </div>
-            <!-- fin de la collapse -->
+            <!-- debut de la collapse -->
+            <div class="collapse" id="collapseExample1">
+              <div class="row">
+                <div class="col-4">
+                  <div class="text-center colprojet">Projet:</div>
+                  <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
+                </div>
+                <div class="col-8">
+                  <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
+                  <div class="mt-2 colpourct">5</div>
+                </div>
+              </div>
+              <!-- fin de la collapse -->
+            </div>
           </div>
         </div>
-      </div>
-      <!-- fin part  -->
-      <!-- debut Pret -->
-      <div class="mb-2 don">
-        <div class="card">
-          <div class="row">
-            <div class="col-4">
-              <div class="imgdon">
-                <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
-              </div>
-            </div>
-            <div class="col-6 align-self-center">
-              <div class="row ecrit">Prêt</div>
-              <div class="row ecrit">Montant: 5000</div>
-              <div class="row ecrit">Date: 01/06/2023</div>
-            </div>
-            <div class="col-2 align-self-center">
-              <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
-                name="chevron-down-outline"></ion-icon>
-            </div>
-          </div>
-          <!-- debut de la collapse -->
-          <div class="collapse" id="collapseExample1">
+        <!-- fin part  -->
+        <!-- debut Pret -->
+        <div class="mb-2 don">
+          <div class="card">
             <div class="row">
               <div class="col-4">
-                <div class="text-center colprojet">Projet:</div>
-                <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
+                <div class="imgdon">
+                  <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
+                </div>
               </div>
-              <div class="col-8">
-                <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
-                <div class="mt-2 colpourct">5%</div>
+              <div class="col-6 align-self-center">
+                <div class="row ecrit">Prêt</div>
+                <div class="row ecrit">Montant: 5000</div>
+                <div class="row ecrit">Date: 01/06/2023</div>
+              </div>
+              <div class="col-2 align-self-center">
+                <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                  name="chevron-down-outline"></ion-icon>
               </div>
             </div>
-            <!-- fin de la collapse -->
+            <!-- debut de la collapse -->
+            <div class="collapse" id="collapseExample1">
+              <div class="row">
+                <div class="col-4">
+                  <div class="text-center colprojet">Projet:</div>
+                  <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
+                </div>
+                <div class="col-8">
+                  <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
+                  <div class="mt-2 colpourct">5%</div>
+                </div>
+              </div>
+              <!-- fin de la collapse -->
+            </div>
           </div>
         </div>
-      </div>
-      <!-- fin Pret -->
-      <!-- debut Pret -->
-      <div class="mb-2 don">
-        <div class="card">
-          <div class="row">
-            <div class="col-4">
-              <div class="imgdon">
-                <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
-              </div>
-            </div>
-            <div class="col-6 align-self-center">
-              <div class="row ecrit">Prêt</div>
-              <div class="row ecrit">Montant: 5000</div>
-              <div class="row ecrit">Date: 01/06/2023</div>
-            </div>
-            <div class="col-2 align-self-center">
-              <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
-                name="chevron-down-outline"></ion-icon>
-            </div>
-          </div>
-          <!-- debut de la collapse -->
-          <div class="collapse" id="collapseExample1">
+        <!-- fin Pret -->
+        <!-- debut Pret -->
+        <div class="mb-2 don">
+          <div class="card">
             <div class="row">
               <div class="col-4">
-                <div class="text-center colprojet">Projet:</div>
-                <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
+                <div class="imgdon">
+                  <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
+                </div>
               </div>
-              <div class="col-8">
-                <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
-                <div class="mt-2 colpourct">5%</div>
+              <div class="col-6 align-self-center">
+                <div class="row ecrit">Prêt</div>
+                <div class="row ecrit">Montant: 5000</div>
+                <div class="row ecrit">Date: 01/06/2023</div>
+              </div>
+              <div class="col-2 align-self-center">
+                <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                  name="chevron-down-outline"></ion-icon>
               </div>
             </div>
-            <!-- fin de la collapse -->
+            <!-- debut de la collapse -->
+            <div class="collapse" id="collapseExample1">
+              <div class="row">
+                <div class="col-4">
+                  <div class="text-center colprojet">Projet:</div>
+                  <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
+                </div>
+                <div class="col-8">
+                  <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
+                  <div class="mt-2 colpourct">5%</div>
+                </div>
+              </div>
+              <!-- fin de la collapse -->
+            </div>
           </div>
         </div>
-      </div>
-      <!-- fin Pret -->
-      <!-- debut Pret -->
-      <div class="mb-2 don">
-        <div class="card">
-          <div class="row">
-            <div class="col-4">
-              <div class="imgdon">
-                <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
-              </div>
-            </div>
-            <div class="col-6 align-self-center">
-              <div class="row ecrit">Prêt</div>
-              <div class="row ecrit">Montant: 5000</div>
-              <div class="row ecrit">Date: 01/06/2023</div>
-            </div>
-            <div class="col-2 align-self-center">
-              <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
-                name="chevron-down-outline"></ion-icon>
-            </div>
-          </div>
-          <!-- debut de la collapse -->
-          <div class="collapse" id="collapseExample1">
+        <!-- fin Pret -->
+        <!-- debut Pret -->
+        <div class="mb-2 don">
+          <div class="card">
             <div class="row">
               <div class="col-4">
-                <div class="text-center colprojet">Projet:</div>
-                <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
+                <div class="imgdon">
+                  <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
+                </div>
               </div>
-              <div class="col-8">
-                <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
-                <div class="mt-2 colpourct">5%</div>
+              <div class="col-6 align-self-center">
+                <div class="row ecrit">Prêt</div>
+                <div class="row ecrit">Montant: 5000</div>
+                <div class="row ecrit">Date: 01/06/2023</div>
+              </div>
+              <div class="col-2 align-self-center">
+                <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                  name="chevron-down-outline"></ion-icon>
               </div>
             </div>
-            <!-- fin de la collapse -->
+            <!-- debut de la collapse -->
+            <div class="collapse" id="collapseExample1">
+              <div class="row">
+                <div class="col-4">
+                  <div class="text-center colprojet">Projet:</div>
+                  <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
+                </div>
+                <div class="col-8">
+                  <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
+                  <div class="mt-2 colpourct">5%</div>
+                </div>
+              </div>
+              <!-- fin de la collapse -->
+            </div>
           </div>
         </div>
+        <!-- fin Pret -->
       </div>
-      <!-- fin Pret -->
-    </div>
     </div>
   </div>
 </ion-content>

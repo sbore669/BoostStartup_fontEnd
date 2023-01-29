@@ -310,9 +310,8 @@
                 [(ngModel)]="projets.prix_action"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-select name="idTypeProjet" [(ngModel)]="Idtypeprojets" required>
-                <ion-select-option *ngFor="let type of typesProjet" [value]="type.id">{{ type.name
-                  }}</ion-select-option>
+              <ion-select name="idTypeProjet" placeholder="Type de projets" [(ngModel)]="Idtypeprojets" required>
+                <ion-select-option *ngFor="let type of typesProjet" [value]="type.idtypeprojets">{{ type.nomtype }}</ion-select-option>
               </ion-select>
             </ion-item>
             <ion-item>
@@ -321,7 +320,7 @@
           </ion-list>
           <div class="d-flex justify-content-around mt-3 btnn">
             <a class="btn btn-r" (click)="backStep()">retour</a>
-            <ion-button expand="block" type="submit">S'inscrire</ion-button>
+            <ion-button expand="block" type="submit">Creer la Collecte</ion-button>
 
           </div>
 
