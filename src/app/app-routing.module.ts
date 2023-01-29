@@ -113,6 +113,10 @@ const routes: Routes = [
   {
     path: 'staprojetsdetail/:idprojet',
     loadChildren: () => import('./staprojetsdetail/staprojetsdetail.module').then( m => m.StaprojetsdetailPageModule)
+  },
+  {
+    path: 'equipe',
+    loadChildren: () => import('./equipe/equipe.module').then( m => m.EquipePageModule)
   }
 ];
 @NgModule({
