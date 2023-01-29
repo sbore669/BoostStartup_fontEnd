@@ -31,8 +31,8 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating">Centre d'interêt</ion-label>
-          <ion-select name="idTypeProjet" [(ngModel)]="Idtypeprojets" required>
-            <ion-select-option *ngFor="let type of typesProjet" [value]="type.id">{{ type.name }}</ion-select-option>
+          <ion-select name="idTypeProjet" [(ngModel)]="Idtypeprojets" [multiple]="true" required>
+            <ion-select-option *ngFor="let type of typesProjet" [value]="type.idtypeprojets">{{ type.nomtype }}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>

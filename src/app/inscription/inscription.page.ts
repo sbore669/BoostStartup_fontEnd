@@ -3,6 +3,7 @@ import { FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Investisseur } from '../Model/investisseur';
 import { AuthService } from '../_services/auth.service';
+import { TypeprojetsService } from '../_services/typeprojets.service';
 
 @Component({
   selector: 'app-inscription',
@@ -27,13 +28,19 @@ export class InscriptionPage implements OnInit {
 
   Idtypeprojets!: number;
   selectedFile!: File;
+  typesProjet: any;
 
 
-  typesProjet: any[] = [{ id: 1, name: "Type 1" }, { id: 2, name: "Type 2" }, { id: 3, name: "Type 3" }];
+  // typesProjet: any[] = [{ id: 1, name: "Type 1" }, { id: 2, name: "Type 2" }, { id: 3, name: "Type 3" }];
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService,
+     private router: Router, private typeprojets: TypeprojetsService) { }
 
   ngOnInit() {
+    this.typeprojets.listetypeprojets().subscribe(data =>{
+      this.typesProjet = data
+      console.log(data)
+    })
 
   }
 
@@ -52,7 +59,7 @@ export class InscriptionPage implements OnInit {
           console.log(err)
         }
       })
-      
+
   }
 }
 

@@ -21,16 +21,25 @@ export class ComptstartPage implements OnInit {
 
   constructor(private authService: AuthService, private storageService: StorageService, private router: Router) { }
 
+  // ngOnInit(): void {
+  //   if (this.storageService.isLoggedIn()) {
+  //     this.isLoggedIn = true;
+  //      this.roles[0]=='ROLE_STARTUPS'
+  //       this.router.navigateByUrl('/tabs/dashbord-start')
+  //     // }
+  //   }
+  // }
   ngOnInit(): void {
-    if (this.storageService.isLoggedIn()) {
+      if (this.storageService.isLoggedIn()) {
+      const user = this.storageService.getUser();
+      if (user.roles.includes('ROLE_STARTUPS')) {
       this.isLoggedIn = true;
-       this.roles[0]=='ROLE_STARTUPS'
-        this.storageService.saveUser(this.roles);
-      // if (this.isLoggedIn) {
-        this.router.navigateByUrl('/tabs/dashbord-start')
-      // }
+      this.router.navigateByUrl('/tabs/dashbord-start');
+      } else {
+      this.errorMessage = 'Non autoriser';
     }
   }
+}
 
   onSubmit(): void {
     const { username, password } = this.form;
@@ -85,3 +94,36 @@ export class ComptstartPage implements OnInit {
   }
 
 }
+
+// ngOnInit(): void {
+//   if (this.storageService.isLoggedIn()) {
+//   const user = this.storageService.getUser();
+//   if (user.roles.includes('ROLE_STARTUPS')) {
+//   this.isLoggedIn = true;
+//   this.router.navigateByUrl('/tabs/dashbord-start');
+//   } else {
+//   this.errorMessage = 'Not authorized';
+//   }
+//   }
+//   }
+  
+//   onSubmit(): void {
+//   const { username, password } = this.form;
+//   this.authService.login(username, password).subscribe({
+//   next: data => {
+//   if (data.roles.includes('ROLE_STARTUPS')) {
+//   this.storageService.saveUser(data);
+//   this.isLoginFailed = false;
+//   this.isLoggedIn = true;
+//   this.router.navigate(['/tabs/dashbord-start']);
+//   } else {
+//   this.errorMessage = 'Not authorized';
+//   this.isLoginFailed = true;
+//   }
+//   },
+//   error: err => {
+//   this.errorMessage = err.error.message;
+//   this.isLoginFailed = true;
+//   }
+//   });
+//   }

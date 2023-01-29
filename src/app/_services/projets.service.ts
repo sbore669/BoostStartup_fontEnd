@@ -43,9 +43,10 @@ export class ProjetsService {
     return this.http.get(`${AUTH_API}/aff/${idprojet}`);
   }
 
+  
   //Methode pour recuperer les projets d'une startups
 
-  recupererProjetsStartups(idUsers: any): Observable<any>{
-    return this.http.get(`${AUTH_API}/startups/${idUsers}`)
+  recupererProjetsStartups(id_users: number): Observable<any>{
+    return this.http.get(`${AUTH_API}/startups/${id_users}`)
   }
 }
