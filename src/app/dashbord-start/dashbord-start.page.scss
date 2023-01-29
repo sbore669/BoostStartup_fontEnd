@@ -1,15 +1,43 @@
+ion-toolbar{
+    background: #edeff1;
+    border: none;
+}
+.header-md::after {
+    // left: 0;
+    // bottom: -5px;
+    // background-position: left 0 top -2px;
+    position: absolute;
+     width: 0;
+     height: 0; 
+    // background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMUCS0gBIh/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+    // background-repeat: repeat-x;
+    // content: "";
+}
+ion-header{
+  //  background-color: #edeff1;
+    background-color: #a0bddb;
+    border: none;
+}
 .cont {
-    background: #1C5B80;
+    // background: #edeff1;
+    background: #a0bddb;
+}
+.tittttre{
+    color: #000000;
+    font-weight: bold;
 }
 
-ion-tab-bar {
-    --background: #1C5B80;
-    --border: none;
-}
+// ion-tab-bar {
+//     --background: #1C5B80;
+//     --border: none;
+// }
 .ent{
-    width:94% ;
+    width: 94%;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    top: 10px;
+    
 }
 
 // .contti {
@@ -21,8 +49,8 @@ ion-tab-bar {
 .contti{
     background: #fff;
     border-radius: 20px;
-    margin-top:10% ;
-    height: 80% !important;
+    margin-top:13% ;
+  //  height: 80% !important;
 }
 
 
@@ -88,7 +116,7 @@ ion-tab-bar {
     display: flex;
     align-items: center;
     width: 100vw;
-    bottom: 28px;
+    bottom: 10px;
 }
 
 .contcard {
@@ -102,7 +130,7 @@ ion-tab-bar {
     color: #000000;
     background-color: #ffffff;
     height: 56px;
-    border-radius: 40px 0px;
+    border-radius: 20px 0px;
     box-shadow: 0px 0px 2px rgb(0 0 0);
     font-size: 30px;
     align-self: flex-end;
@@ -179,6 +207,7 @@ ion-card-header.ios {
     height: 100%;
     max-width: 100%;
     max-height: 100%;
+    background: #1DAEFF;
 }
 
 .md .card2 {
@@ -187,6 +216,7 @@ ion-card-header.ios {
     height: 100%;
     max-width: 100%;
     max-height: 100%;
+    background: #7ED957;
 
 }
 
@@ -201,6 +231,7 @@ ion-card-header.ios {
     max-width: 100%;
     max-height: 100%;
     bottom: 2%;
+    background: #1DAEFF;
 }
 
 .ios .card2 {
@@ -210,8 +241,13 @@ ion-card-header.ios {
     max-width: 100%;
     max-height: 100%;
     bottom: 2%;
+    background: #7ED957;
 }
 .bougee {
     position: relative;
-    bottom: 7vh;
+    bottom: 5vh;
 }
+h6{
+    color: #fff;
+    margin: 5px auto;
+  }

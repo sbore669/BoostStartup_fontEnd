@@ -25,7 +25,7 @@ export class ComptstartPage implements OnInit {
     if (this.storageService.isLoggedIn()) {
       this.isLoggedIn = true;
        this.roles[0]=='ROLE_STARTUPS'
-        this.storageService.saveUser(this.roles);
+        //this.storageService.saveUser(this.roles);
       // if (this.isLoggedIn) {
         this.router.navigateByUrl('/tabs/dashbord-start')
       // }

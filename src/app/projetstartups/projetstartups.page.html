@@ -5,15 +5,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+  <ion-card *ngFor="let nproj of vostartups " >  
+      <img alt="Silhouette of mountains" src="{{nproj.image}}" class="immmmg" />
     <ion-card-header>
-      <ion-card-title>My Farming</ion-card-title>
+      <ion-card-title>{{nproj.nomprojets}}</ion-card-title>
       <ion-card-subtitle>My Farming - Application de suivie et production des volaille</ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      {{nproj.description}}
     </ion-card-content>
+    <button type="button" [routerLink]="['/detailprojet',nproj.idprojet]" class="btn btn-primary boutn">details</button>
   </ion-card>
 </ion-content>
