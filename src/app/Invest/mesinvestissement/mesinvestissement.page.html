@@ -1,13 +1,25 @@
 <ion-content>
   <div class="d-flex justify-content-between align-items-center ent">
-    <div class="circle"></div>
+    <div  routerLink="/profil"><img src="{{currentUser.photo}}" class="circle" alt="" srcset=""></div>
     <div class="">
-      <H1 style="color: rgb(0, 0, 0);">Invest</H1>
+      <H1 style="color: rgb(8, 8, 8);">Invest</H1>
     </div>
   </div>
   <div class="container">
+    <div class="cardi">
+      <h3 class="bank"></h3>
+      <img src="/assets/images/mony.png" class="mon" alt="" srcset="">
+      <img src="/assets/images/puce.png" class="chip" alt="" srcset="">
+      <!-- <img src="/assets/images/contactless-indicator.png" class="indicator" alt="" srcset="" /> -->
+      <h3 class="number">{{inv.telephone}}</h3>
+      <h5 class="card-holder">
+        {{inv.nomcomplet}}
+      </h5>
+      <!-- <h5 class="valid"><span>expiry date</span><br />20/30</h5> -->
+      <img src="/assets/images/visa.png" class="logo" alt="" srcset="" />
+    </div>
     <!-- total investissement -->
-    <div class="mt-3">
+    <div class="mt-2">
       <ion-row>
         <ion-col>
           <ion-card class="desc" color="primary">
@@ -22,18 +34,6 @@
       </ion-row>
     </div>
      <!-- total investissement -->
-    <div class="cardi">
-      <h3 class="bank"></h3>
-      <img src="/assets/images/mony.png" class="mon" alt="" srcset="">
-      <img src="/assets/images/puce.png" class="chip" alt="" srcset="">
-      <!-- <img src="/assets/images/contactless-indicator.png" class="indicator" alt="" srcset="" /> -->
-      <h3 class="number">{{inv.telephone}}</h3>
-      <h5 class="card-holder">
-        {{inv.nomcomplet}}
-      </h5>
-      <!-- <h5 class="valid"><span>expiry date</span><br />20/30</h5> -->
-      <img src="/assets/images/visa.png" class="logo" alt="" srcset="" />
-    </div>
     <div class="invi">
       <h4>Dernière transaction</h4>
       <!-- contenu scrollable -->
