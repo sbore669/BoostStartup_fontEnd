@@ -109,6 +109,10 @@ const routes: Routes = [
   {
     path: 'paiementpret/:id_users/:idprojet',
     loadChildren: () => import('./Invest/paiementpret/paiementpret.module').then( m => m.PaiementpretPageModule)
+  },
+  {
+    path: 'staprojetsdetail/:idprojet',
+    loadChildren: () => import('./staprojetsdetail/staprojetsdetail.module').then( m => m.StaprojetsdetailPageModule)
   }
 ];
 @NgModule({
