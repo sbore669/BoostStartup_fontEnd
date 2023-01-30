@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ActionService } from 'src/app/_services/action.service';
 import { ProjetsService } from 'src/app/_services/projets.service';
 import { StorageService } from 'src/app/_services/storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-paiement-action',
@@ -35,7 +36,7 @@ export class PaiementActionPage implements OnInit {
   nomStartups: any;
   idprojetSelect:any;
   apayer:any
-
+  messageService: any;
 
   constructor(private router: Router,private actionService: ActionService,
     private storageService: StorageService,private projetsService: ProjetsService,
@@ -47,14 +48,12 @@ export class PaiementActionPage implements OnInit {
     this.recupererProjetDetails();
   }
   
-
-
   recupererProjetDetails() {
     this.idprojetSelect = this.routes.snapshot.params['idprojet'];
     console.log(this.idprojetSelect + 'yyyyyyyyyyyyyyyyyyyyyyiddd');
     this.projetsService.recupererProjetsparId(this.idprojetSelect).subscribe(data => {
     this.detailsProjets = data
-    
+
       console.log(this.detailsProjets);
       this.nomprojets = this.detailsProjets.nomprojets
       this.action_restante = this.detailsProjets.action_restante
@@ -73,11 +72,45 @@ export class PaiementActionPage implements OnInit {
       this.prix_action = this.detailsProjets.prix_action
       this.nomStartups = this.detailsProjets.nomStartups 
     });
+
   }
+  // faireuneaction() {
+  //   this.actionService.acquerirUneaction(this.idprojetSelect, this.currentUser.id, this.nombreaction)
+  //   .subscribe(data => {
+  //     console.log('ddddddddddddddiuoiduiooudoiduoiduodkeita')
+  //     Swal.fire({
+  //       heightAuto: false,
+  //       icon: 'success',
+  //       text: 'Action acquis avec succès',
+  //       showConfirmButton: false,
+  //       timer: 2500
+  //     })
+  //     this.message = data;
+      
+  //   }, error => console.log(error));
+  // }
   faireuneaction() {
-    this.actionService.acquerirUneaction(this.idprojetSelect, this.currentUser.id, this.nombreaction).subscribe(data =>{
-      this.message = data;
-    }, error => console.log(error));
+    this.actionService.acquerirUneaction(this.idprojetSelect, this.currentUser.id, this.nombreaction)
+      .subscribe(data => {
+        console.log('ddddddddddddddiuoiduiooudoiduoiduodkeita')
+        Swal.fire({
+          heightAuto: false,
+          icon: 'success',
+          text: 'Action acquis avec succès',
+          showConfirmButton: false,
+          timer: 2500
+        })
+        this.message = data;
+      }, error => {
+        console.log(error);
+        Swal.fire({
+          heightAuto: false,
+          icon: 'error',
+          text: 'Erreur lors de l\'acquisition d\'action',
+          showConfirmButton: false,
+          timer: 2500
+        })
+      });
   }
 
   /* 

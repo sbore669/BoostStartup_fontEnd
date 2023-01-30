@@ -24,7 +24,7 @@ export class AcceuilPage implements OnInit {
     this.currentUser = this.storageService.getUser();
     this.projetsService.listdesprojets().subscribe(data => {
       this.projets = data;
-     // console.log(data);
+     console.log(data);
     })
   }
 

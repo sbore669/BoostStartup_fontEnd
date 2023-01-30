@@ -9,17 +9,17 @@
   </div>
 </ion-header> -->
 <ion-header>
-    <div class="d-flex justify-content-between ent">
-      <div>
-        <img src="{{currentUser.photo}}" class="circle" alt="" srcset="">
-      </div>
-      <div class="">
-        <H1 class="tittttre">Dashboard</H1>
-      </div>
+  <div class="d-flex justify-content-between ent">
+    <div>
+      <img src="{{currentUser.photo}}" class="circle" alt="" srcset="">
     </div>
+    <div class="">
+      <H1 class="tittttre">Dashboard</H1>
+    </div>
+  </div>
 </ion-header>
-<ion-content class="cont">
-  
+<ion-content class="cont" style="overflow: hidden;">
+
   <div class="contti">
     <div class="bougee">
       <div class="principale">
@@ -96,27 +96,14 @@
                     <div class="row">
                       <div class="col-6">
                         <div class="dateproj inf-itemt">
-                          <span style="font-size: 1em; margin-top:5% !important; margin-left: 14%;">Agriculture</span> </div>
+                          <span style="font-size: 1em; margin-top:5% !important; margin-left: 14%;">Agriculture</span>
+                        </div>
                       </div>
                       <div class="col-6">
                         <div class="dateproj inf-itemt"><span
                             style="font-size: 1em; margin-top:5% !important; margin-left: 14%;">10-01-2022</span></div>
                       </div>
-                      <!-- <style>
-                        .entete {
-                          font-size: 1em;
-                        }
 
-                        .titt {
-                          font-size: 1em;
-
-                        }
-
-                        .messpans {
-                          margin-left: auto;
-                          font-size: 1em;
-                        }
-                      </style> -->
                     </div>
                   </div>
                 </div>
@@ -197,24 +184,32 @@
             </div>
           </div>
           <!-- hjhcgcgiuevieuvhc -->
-          
+
           <!-- fin des projets -->
           <div class="cardtop">
-            <ion-card  class="card1">
+            <ion-card class="card1">
               <ion-card-header>
-                <ion-icon class="" name="people-outline"></ion-icon>
+                <ion-icon class=" mesicons" name="people-outline"></ion-icon>
               </ion-card-header>
-              <h6 class="ion-text-center">Equipes</h6> 
+              <h6 class="ion-text-center">Equipes</h6>
               <ion-card-content>
               </ion-card-content>
             </ion-card>
-            <ion-card  class="card2" id="open-modal">
+            <ion-card class="card2" id="open-modal">
               <ion-card-header>
-                <ion-icon name="add-circle-outline"></ion-icon>
+                <ion-icon class="mesicons" name="add-circle-outline"></ion-icon>
               </ion-card-header>
-
-              <ion-card-content >
-                <h6 class="ion-text-center">Lancer Collecte</h6> 
+              <style>
+                .mesicons {
+                  font-size: 40px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  color: white;
+                }
+                
+              </style>
+              <ion-card-content>
+                <h6 class="ion-text-center" style=" font-weight: 500;">Lancer Collecte</h6>
               </ion-card-content>
             </ion-card>
           </div>
@@ -229,17 +224,17 @@
 
 <!-- Mmmmmmmmmmmmooooooooooooooodddddddddddddddaaaaaaaaaaaaaallllllllllllllllllll -->
 
-<ion-modal #modal trigger="open-modal" [presentingElement]="presentingElement">
+<ion-modal #modal trigger="open-modal" [presentingElement]="presentingElement"  >
   <ng-template>
     <ion-header>
-      <ion-toolbar>
-        <ion-title>Modal</ion-title>
+      <ion-toolbar color="white">
+        <ion-title>Creation d'un projet</ion-title>
         <ion-buttons slot="end">
-          <ion-button (click)="modal.dismiss()">Close</ion-button>
+          <ion-button (click)="modal.dismiss()">Ferme</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
+    <ion-content  >
       <!-- debut du formulaire pour ajouter un projets -->
       <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
         <div [hidden]="!suivant">
@@ -311,7 +306,8 @@
             </ion-item>
             <ion-item>
               <ion-select name="idTypeProjet" placeholder="Type de projets" [(ngModel)]="Idtypeprojets" required>
-                <ion-select-option *ngFor="let type of typesProjet" [value]="type.idtypeprojets">{{ type.nomtype }}</ion-select-option>
+                <ion-select-option *ngFor="let type of typesProjet" [value]="type.idtypeprojets">{{ type.nomtype
+                  }}</ion-select-option>
               </ion-select>
             </ion-item>
             <ion-item>
