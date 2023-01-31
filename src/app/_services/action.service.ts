@@ -25,5 +25,9 @@ export class ActionService {
 
     return this.http.post(`${AUTH_API}/add/${id_users}/${idprojet}` , formData);
   }
-
+  //Methode pour recuperer l'ensemble des action d'un investisseurs
+  listerActionParInvestisseur(id_users: number): Observable<any>{
+    return this.http.get(`${AUTH_API}/invest/${id_users}`);
+  }
+  
 }

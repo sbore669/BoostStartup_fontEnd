@@ -6,43 +6,24 @@
     </div>
   </div>
   <div class="container">
-    <!-- carte bancaire -->
-    <!-- <div class="cardi">
-      <h3 class="bank"></h3>
-      <img src="/assets/images/mony.png" class="mon" alt="" srcset="">
-      <img src="/assets/images/puce.png" class="chip" alt="" srcset=""> -->
-    <!-- <img src="/assets/images/contactless-indicator.png" class="indicator" alt="" srcset="" /> -->
-    <!-- <h3 class="number">{{inv.telephone}}</h3>
-      <h5 class="card-holder">
-        {{inv.nomcomplet}}
-      </h5> -->
-    <!-- <h5 class="valid"><span>expiry date</span><br />20/30</h5> -->
-    <!-- <img src="/assets/images/visa.png" class="logo" alt="" srcset="" />
-    </div> -->
-    <!-- carte bancaire -->
-    <!--Essaies carte bancaire -->
+    <!-- Carte bancaire -->
     <div class="cardi">
       <!-- <h3 class="bank"></h3> -->
       <div class="d-flex mon1"><img src="/assets/images/mony.png" class="mon" alt="" srcset=""></div>
       <div class="d-flex cdmil">
         <div class=""><img src="/assets/images/puce.png" class="chip" alt="" srcset=""></div>
         <div class="">
-          <h3 class="number">+223{{inv.telephone}}</h3>
+          <h3 class="number">+223{{tel}}</h3>
         </div>
       </div>
       <div class="d-flex justify-content-between infoocard">
         <div class="">
-          <img src="/assets/images/visa.png" class="logo" alt="" srcset=""/>
+          <img src="/assets/images/visa.png" class="logo" alt="" srcset="" />
         </div>
         <div class="">
-          <h5 class="card-holder">{{inv.nomcomplet}}</h5>
+          <h5 class="card-holder">{{nmcp}}</h5>
         </div>
       </div>
-      <!-- <img src="/assets/images/contactless-indicator.png" class="indicator" alt="" srcset="" /> -->
-
-
-      <!-- <h5 class="valid"><span>expiry date</span><br />20/30</h5> -->
-      
     </div>
     <!--Essaie carte bancaire -->
     <!-- total investissement -->
@@ -54,7 +35,7 @@
               <h6>Total investissement</h6>
             </div>
             <div class="cardicon">
-              <p class="nbre">{{inv.totalInvestissement}}</p>
+              <p class="nbre">{{ttinv}}</p>
             </div>
           </ion-card>
         </ion-col>
@@ -65,12 +46,15 @@
       <h4>Dernière transaction</h4>
       <!-- contenu scrollable -->
       <div class="inv">
-        <div class="mb-2 don">
+
+
+        <!-- pour les donation -->
+        <div class="mb-2 don" *ngFor="let donation of don">
           <div class="card">
             <div class="row">
               <div class="col-4">
                 <div class="imgdon">
-                  <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
+                  <img class="card-img-top donlog" src="/assets/images/don.png" alt="Card image">
                 </div>
               </div>
               <div class="col-6 align-self-center">
@@ -99,19 +83,22 @@
             </div>
           </div>
         </div>
-        <!-- debut part  -->
-        <div class="mb-2 don">
+        <!-- fin pour les donation -->
+
+
+        <!-- debut Action  -->
+        <div class="mb-2 action" *ngFor="let act of action">
           <div class="card">
             <div class="row">
               <div class="col-4">
                 <div class="imgdon">
-                  <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
+                  <img class="card-img-top donlog" src="/assets/images/icon1.svg" alt="Card image">
                 </div>
               </div>
               <div class="col-6 align-self-center">
                 <div class="row ecrit">Action</div>
-                <div class="row ecrit">Montant: 5000</div>
-                <div class="row ecrit">Date: 01/06/2023</div>
+                <div class="row ecrit">Montant: {{act.montantInvest}}</div>
+                <div class="row ecrit">Date: {{act.date_investissement | date: 'dd/MM/yyyy'}}</div>
               </div>
               <div class="col-2 align-self-center">
                 <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
@@ -126,166 +113,64 @@
                   <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
                 </div>
                 <div class="col-8">
-                  <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
-                  <div class="mt-2 colpourct">5</div>
+                  <div class="colnomproj">{{act.projets.nomprojets}}</div>
+                  <div class="mt-2 colpourct">{{act.nombreaction}}</div>
                 </div>
               </div>
               <!-- fin de la collapse -->
             </div>
           </div>
         </div>
-        <!-- fin part  -->
+        <!-- fin Action  -->
+
+
         <!-- debut Pret -->
-        <div class="mb-2 don">
+        <div class="mb-2 pret" *ngFor="let pre of pret">
           <div class="card">
             <div class="row">
               <div class="col-4">
                 <div class="imgdon">
-                  <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
+                  <img class="card-img-top donlog" src="/assets/images/Vector.png" alt="Card image">
                 </div>
               </div>
               <div class="col-6 align-self-center">
                 <div class="row ecrit">Prêt</div>
-                <div class="row ecrit">Montant: 5000</div>
-                <div class="row ecrit">Date: 01/06/2023</div>
+                <div class="row ecrit">Montant:{{pre.montantInvest}}</div>
+                <div class="row ecrit">Date: {{pre.date_investissement | date: 'dd/MM/yyyy'}}</div>
               </div>
               <div class="col-2 align-self-center">
-                <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
                   name="chevron-down-outline"></ion-icon>
               </div>
             </div>
             <!-- debut de la collapse -->
-            <div class="collapse" id="collapseExample1">
+            <div class="collapse" id="collapseExample2">
               <div class="row">
-                <div class="col-4">
+                <!-- <div class="col-4">
                   <div class="text-center colprojet">Projet:</div>
-                  <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
+                  <div class="text-center mt-3 mb-2 colprojet1">Pourcentage:</div>
                 </div>
                 <div class="col-8">
-                  <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
-                  <div class="mt-2 colpourct">5%</div>
+                  <div class="colnomproj">{{pre.projets.nomprojets}}</div>
+                  <div class="mt-2 colpourct">{{pre.projets.pourcentage}}</div>
+                </div> -->
+                <div class="d-flex justify-content-around">
+                  <p class="text-muted">Projet:</p>
+                  <p>{{pre.projets.nomprojets}}</p>
+                </div>
+                <div class="d-flex justify-content-around">
+                  <p class="text-muted">Pourcentage :</p>
+                  <p>{{pre.projets.pourcentage}}</p>
                 </div>
               </div>
               <!-- fin de la collapse -->
             </div>
           </div>
         </div>
+
         <!-- fin Pret -->
-        <!-- debut Pret -->
-        <div class="mb-2 don">
-          <div class="card">
-            <div class="row">
-              <div class="col-4">
-                <div class="imgdon">
-                  <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
-                </div>
-              </div>
-              <div class="col-6 align-self-center">
-                <div class="row ecrit">Prêt</div>
-                <div class="row ecrit">Montant: 5000</div>
-                <div class="row ecrit">Date: 01/06/2023</div>
-              </div>
-              <div class="col-2 align-self-center">
-                <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
-                  name="chevron-down-outline"></ion-icon>
-              </div>
-            </div>
-            <!-- debut de la collapse -->
-            <div class="collapse" id="collapseExample1">
-              <div class="row">
-                <div class="col-4">
-                  <div class="text-center colprojet">Projet:</div>
-                  <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
-                </div>
-                <div class="col-8">
-                  <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
-                  <div class="mt-2 colpourct">5%</div>
-                </div>
-              </div>
-              <!-- fin de la collapse -->
-            </div>
-          </div>
-        </div>
-        <!-- fin Pret -->
-        <!-- debut Pret -->
-        <div class="mb-2 don">
-          <div class="card">
-            <div class="row">
-              <div class="col-4">
-                <div class="imgdon">
-                  <img class="card-img-top donlog" src="/assets/images/don.svg" alt="Card image">
-                </div>
-              </div>
-              <div class="col-6 align-self-center">
-                <div class="row ecrit">Prêt</div>
-                <div class="row ecrit">Montant: 5000</div>
-                <div class="row ecrit">Date: 01/06/2023</div>
-              </div>
-              <div class="col-2 align-self-center">
-                <ion-icon class="drawsdoico" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
-                  name="chevron-down-outline"></ion-icon>
-              </div>
-            </div>
-            <!-- debut de la collapse -->
-            <div class="collapse" id="collapseExample1">
-              <div class="row">
-                <div class="col-4">
-                  <div class="text-center colprojet">Projet:</div>
-                  <div class="text-center mt-3 mb-2 colprojet1">Nombre acquis:</div>
-                </div>
-                <div class="col-8">
-                  <div class="colnomproj">My Farming - Application de suivie et production des volaille</div>
-                  <div class="mt-2 colpourct">5%</div>
-                </div>
-              </div>
-              <!-- fin de la collapse -->
-            </div>
-          </div>
-        </div>
-        <!-- fin Pret -->
+
       </div>
     </div>
   </div>
 </ion-content>
-<!-- <ion-content>
-  <div class="card-container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle class="bank">bank</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-grid>
-          <ion-row>
-            <ion-col size="3">
-              <img src="assets/images/chip.png" class="chip" alt="" srcset="">
-            </ion-col>
-            <ion-col size="3">
-              <img src="assets/images/contactless-indicator.png" class="indicator" alt="" srcset="" />
-            </ion-col>
-            <ion-col size="6">
-              <ion-text class="number">4100 1234 5678 9010</ion-text>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col size="6">
-              <ion-text class="card-holder">
-                <span>card holder</span><br />
-                muhammad usman
-              </ion-text>
-            </ion-col>
-            <ion-col size="6">
-              <ion-text class="valid">
-                <span>expiry date</span><br />20/30
-              </ion-text>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col size="12">
-              <img src="assets/images/visa.png" class="logo" alt="" srcset=""/>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
-  </div>
-</ion-content> -->

@@ -4,6 +4,21 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  
+  <ion-list lines="full">
+    <ion-card class="cardd" *ngFor="let notif of notff">
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-img src="https://i.pravatar.cc/300?u=b%22%3E"></ion-img>
+
+        </ion-avatar>
+        <ion-label class=" ion-text-wrap">
+          <p style="color: black;">{{notif.message}}</p>
+          <p>{{notif.datenotif | date: 'dd/MM/yyyy HH:mm:ss'}}</p>
+        </ion-label>
+
+      </ion-item>
+    </ion-card>
+  </ion-list>
 </ion-content>
