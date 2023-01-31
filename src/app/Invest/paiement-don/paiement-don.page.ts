@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { DonationService } from 'src/app/_services/donation.service';
 import { ProjetsService } from 'src/app/_services/projets.service';
 import { StorageService } from 'src/app/_services/storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-paiement-don',
@@ -75,7 +76,23 @@ export class PaiementDonPage implements OnInit {
   envoyedonation(){
     this.donationService.faireunedonation(this.idprojetSelect, this.currentUser.id, this.montantInvest).subscribe(data =>{
       this.message = data;
-    }, error => console.log(error));
+      Swal.fire({
+        heightAuto: false,
+        icon: 'success',
+        text: 'donnation effectuer avec succès',
+        showConfirmButton: false,
+        timer: 2500
+      })
+    }, error => {
+      console.log(error);
+      Swal.fire({
+        heightAuto: false,
+        icon: 'error',
+        text: 'Erreur lors de la donnation',
+        showConfirmButton: false,
+        timer: 2500
+      })
+    });
   }
 
 

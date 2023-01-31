@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Projets } from '../Model/projets';
 import { AuthService } from '../_services/auth.service';
 import { ProjetsService } from '../_services/projets.service';
@@ -71,8 +72,17 @@ export class DashbordStartPage implements OnInit {
     this.projetsService.creerprojets(this.currentUser.id, this.Idtypeprojets, this.selectedFile, this.projets)
       .subscribe( res => {
         console.log(res);
+        Swal.fire({
+          heightAuto: false,
+          icon: 'success',
+          text: 'Projet créé avec succès',
+          showConfirmButton: false,
+          timer: 2500
+        })
+        this.router.navigateByUrl('/tabs/projetstartups');
+        // modal.dismiss();
         if (res.message == "Projet créé avec succès") {
-          this.router.navigate(['/validation']);
+          
         } else {
           console.log("erreur");
         }

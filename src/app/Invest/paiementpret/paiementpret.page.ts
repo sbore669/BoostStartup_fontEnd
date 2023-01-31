@@ -4,6 +4,7 @@ import { error } from 'console';
 import { PretService } from 'src/app/_services/pret.service';
 import { ProjetsService } from 'src/app/_services/projets.service';
 import { StorageService } from 'src/app/_services/storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-paiementpret',
@@ -76,7 +77,23 @@ export class PaiementpretPage implements OnInit {
   envoyepret(){
     this.pretService.faireunPret(this.idprojetSelect, this.currentUser.id, this.montantInvest).subscribe(data =>{
       this.message = data;
-    }, error => console.log(error));
+      Swal.fire({
+        heightAuto: false,
+        icon: 'success',
+        text: 'Prêt effectuer avec succès',
+        showConfirmButton: false,
+        timer: 2500
+      })
+    }, error => {
+      console.log(error);
+      Swal.fire({
+        heightAuto: false,
+        icon: 'error',
+        text: 'Erreur lors du prêt',
+        showConfirmButton: false,
+        timer: 2500
+      })
+    });
   }
 
 }
