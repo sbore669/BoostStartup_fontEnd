@@ -28,6 +28,8 @@ export class DashbordStartPage implements OnInit {
   
   step = 1;
   typesProjet: any;
+  sommetotale: any;
+  nbreprojets: any;
   
 
   constructor(private authService: AuthService,
@@ -46,7 +48,10 @@ export class DashbordStartPage implements OnInit {
       this.typesProjet = data
       console.log(data)
     })
+    this.recupererTotalstartups();
+    this.recupererTotalprojetsParstartups();
   }
+
   nextStep(){
     this.suivant = false;
     this.step++;
@@ -62,6 +67,8 @@ export class DashbordStartPage implements OnInit {
     spaceBetween:10,
     autoplay:false
   }
+
+
 
   onFileSelected(event: any) {
     this.selectedFile = <File>event.target.files[0];
@@ -88,5 +95,31 @@ export class DashbordStartPage implements OnInit {
         }
       });
   }
+
+  recupererTotalstartups(){
+    const id_users = this.currentUser.id
+    this.projetsService.lasommedesprojetsStartups(id_users).subscribe(data =>{
+      this.sommetotale = data
+      console.log(this.sommetotale)
+    })
+  }
+
+  recupererTotalprojetsParstartups(){
+    const id_users = this.currentUser.id
+    this.projetsService.nombredeprojetsparStartups(id_users).subscribe(data =>{
+      this.nbreprojets = data
+      console.log(this.nbreprojets)
+    })
+  }
+
+  // recupererProjetStartups(){
+  //   const id_users = this.currentUser.id
+  //   console.log(id_users);
+  //   this.projetsService.recupererProjetsStartups(id_users).subscribe(data =>{
+  //     this.vostartups = data
+  //     console.log(this.vostartups)
+  //   });
+  // }
+
 
 }

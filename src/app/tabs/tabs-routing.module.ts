@@ -16,8 +16,8 @@ const routes: Routes = [
         loadChildren: () => import('../statistique/statistique.module').then( m => m.StatistiquePageModule)
       },
       {
-        path: 'investstartp',
-        loadChildren: () => import('../investstartp/investstartp.module').then( m => m.InveststartpPageModule)
+        path: 'invest-par-projet',
+        loadChildren: () => import('../invest-par-projet/invest-par-projet.module').then( m => m.InvestParProjetPageModule)
       },
       {
         path: 'projetstartups',

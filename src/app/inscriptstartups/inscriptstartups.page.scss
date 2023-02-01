@@ -5,6 +5,7 @@
 .mat-mdc-form-field {
     margin-top: 16px;
 }
+
 hr {
     border: #38B6FF;
     clear: both;
@@ -28,7 +29,20 @@ hr {
 
 a.btn {
     background: #3a6fe6;
+    color: aliceblue;
+    width: 48%;
+    font-size: 20px;
+    border-radius: 20px;
 }
-a.btn-r{
+ion-button{
+    background: #3a6fe6;
+    color: aliceblue;
+    width: 48%;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+
+a.btn-r {
     background: #615b5b;
 }

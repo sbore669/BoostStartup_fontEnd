@@ -2,7 +2,7 @@
   <div class="container">
     <div class="container">
       <div class="d-flex justify-content-center">
-        <img src="/assets/gif/Account.gif" class="w-50 h-50" alt="...">
+        <img src="/assets/gif/Account.gif" class="w-75 h-75" alt="...">
       </div>
       <div class="mt-0 text-center tit">
         Création d'une Startups
@@ -34,7 +34,7 @@
               [(ngModel)]="startups.password"></ion-input>
           </ion-item>
         </ion-list>
-        <div class="d-flex justify-content-center mt-3 btnn">
+        <div class="d-flex justify-content-center mt-5 btnn">
           <a class="btn" (click)="nextStep()">Suivant</a>
         </div>
       </div>
@@ -69,7 +69,7 @@
               [(ngModel)]="startups.proprietaire"></ion-input>
           </ion-item>
         </ion-list>
-        <div class="d-flex justify-content-around mt-3 btnn">
+        <div class="d-flex justify-content-between p-2 mt-3 mb-2 btnn">
           <a class="btn btn-r" (click)="backStep()">retour</a>
           <a class="btn" (click)="nextStep()">Suivant</a>
         </div>
@@ -101,10 +101,9 @@
             <input type="file" placeholder="photo" (change)="onFileSelected($event)" name="photo">
           </ion-item>
         </ion-list>
-        <div class="d-flex justify-content-around mt-3 btnn">
+        <div class="d-flex justify-content-between mt-3 mb-5 btnn">
           <a class="btn btn-r" (click)="backStep()">retour</a>
-          <ion-button expand="block" type="submit">S'inscrire</ion-button>
-          
+          <ion-button style="color: aliceblue;" expand="block" type="submit">S'inscrire</ion-button>
         </div>
   
       </div>

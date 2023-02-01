@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar class="d-flex">
+    <ion-icon routerLink="/tabs/invest-par-projet" class="ioconback" name="arrow-back"></ion-icon>
+    <ion-title>Les donateur </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar show-clear-button="always" value="Recherche"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- total investissement -->
+  <ion-card class="desc" color="primary">
+    <div class="cardbody">
+      <h6>Donation Total</h6>
+    </div>
+    <div class="cardicon">
+      <p class="nbre">{{donationtot}}</p>
+    </div>
+  </ion-card>
+<!-- total investissement -->
+  <!-- Card jury -->
+  <ion-card *ngFor="let donn of donateur">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="2">
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="{{donn.investisseur.photo}}" />
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="10">
+          <ion-card-header>
+            <ion-card-title>{{donn.investisseur.nomcomplet}}</ion-card-title>
+            <ion-card-subtitle>Montant investit:{{donn.montantInvest}}<br>Prix
+              d'action:{{donn.prix_action}}<br>Acquis:{{donn.nombreaction}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <!-- fin du card -->
+</ion-content>

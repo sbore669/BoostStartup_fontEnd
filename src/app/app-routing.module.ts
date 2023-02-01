@@ -67,7 +67,7 @@ const routes: Routes = [
     loadChildren: () => import('./projetstartups/projetstartups.module').then( m => m.ProjetstartupsPageModule)
   },
   {
-    path: 'investstartp',
+    path: 'investstartp/:idprojet',
     loadChildren: () => import('./investstartp/investstartp.module').then( m => m.InveststartpPageModule)
   },
   {
@@ -117,6 +117,22 @@ const routes: Routes = [
   {
     path: 'equipe',
     loadChildren: () => import('./equipe/equipe.module').then( m => m.EquipePageModule)
+  },
+  {
+    path: 'profil-startups',
+    loadChildren: () => import('./profil-startups/profil-startups.module').then( m => m.ProfilStartupsPageModule)
+  },
+  {
+    path: 'invest-par-projet',
+    loadChildren: () => import('./invest-par-projet/invest-par-projet.module').then( m => m.InvestParProjetPageModule)
+  },
+  {
+    path: 'preteur/:idprojet',
+    loadChildren: () => import('./preteur/preteur.module').then( m => m.PreteurPageModule)
+  },
+  {
+    path: 'donnateur/:idprojet',
+    loadChildren: () => import('./donnateur/donnateur.module').then( m => m.DonnateurPageModule)
   }
 ];
 @NgModule({

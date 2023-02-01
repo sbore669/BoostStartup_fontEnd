@@ -10,7 +10,7 @@
 </ion-header> -->
 <ion-header>
   <div class="d-flex justify-content-between ent">
-    <div>
+    <div routerLink="/profil-startups">
       <img src="{{currentUser.photo}}" class="circle" alt="" srcset="">
     </div>
     <div class="">
@@ -30,11 +30,11 @@
             <ion-card class="cardsld">
               <ion-card-header>
                 <ion-card-title class="tcll">Total Collecter</ion-card-title>
-                <ion-card-subtitle class="montan">12 000 000 XOF</ion-card-subtitle>
+                <ion-card-subtitle class="montan">{{sommetotale}} XOF</ion-card-subtitle>
               </ion-card-header>
               <ion-card-content class="projcaerd">
                 <div class="w-50 contcard">Total Projets</div>
-                <div class="w-50 projtt">4</div>
+                <div class="w-50 projtt">{{nbreprojets}}</div>
               </ion-card-content>
             </ion-card>
           </ion-slide>
@@ -244,28 +244,31 @@
               <ion-input type="text" placeholder="Nom du projets" name="nomprojets"
                 [(ngModel)]="projets.nomprojets"></ion-input>
             </ion-item>
-
+            
             <ion-item>
               <ion-input type="text" placeholder="Objectifs du projets" name="objectif"
                 [(ngModel)]="projets.objectif"></ion-input>
             </ion-item>
+
             <ion-item>
               <ion-input type="number" placeholder="Budget Previsionnel" name="budgetPrevisonnel"
                 [(ngModel)]="projets.budgetPrevisonnel"></ion-input>
             </ion-item>
+
             <ion-item>
               <ion-input type="number" placeholder="pret_maximun" name="pret_maximun"
                 [(ngModel)]="projets.pret_maximun"></ion-input>
             </ion-item>
+
             <ion-item>
               <ion-input type="number" placeholder="Pourcentage sur le pret" name="pourcentage"
                 [(ngModel)]="projets.pourcentage"></ion-input>
             </ion-item>
+
             <ion-item>
               <ion-input type="number" placeholder="objectifpret sur le pret" name="objectifpret"
                 [(ngModel)]="projets.objectifpret"></ion-input>
             </ion-item>
-
 
             <ion-item>
               <ion-textarea rows="5" type="text" placeholder="Description du projets" name="description"

@@ -1,0 +1,168 @@
+<ion-header>
+  <ion-toolbar class="tooooll">
+    <div class="d-flex justify-content-between">
+      <div class="">
+        <ion-icon routerLink="/tabs/dashbord-start" class="ioconback" name="arrow-back"></ion-icon>
+      </div>
+      <div class="">
+        <ion-title>Information du Compte</ion-title>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="">
+    <img src="/assets/images/couverture.jpg" class="img-fluid" alt="...">
+  </div>
+  
+  <div class="container">
+    <div class="container" *ngIf="currentUser">
+      <div class="d-flex justify-content-between imagespro">
+        <div class="col-8">
+          <h1 class="inform">Nom Startups</h1>
+          <p class="text-muted descrpstartups">Une notification est une formalité en droit : par laquelle on tient officiellement une personne informée du
+            contenu d'un acte auquel </p>
+        </div>
+        <div class="col-4 ion-text-end mt-3">
+          <img src="{{currentUser.photo}}" class="phoyy" alt="" srcset="">
+          <div class="mt-3 ion-text-center">
+            <ion-button class="ibutton" id="open-modal">Modifier</ion-button>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <div class="d-flex justify-content-between">
+          <p class="text-muted">Pseudo :</p>
+          <p> {{currentUser.username}}
+          </p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted">Email :</p>
+          <p class="text-truncate"> {{currentUser.email}}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted text-nowrap">Adresse :</p>
+          <p class="text-truncate"> {{currentUser.adresse}}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted">Contact :</p>
+          <p> 20009090</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted">Email:</p>
+          <p> startups@gmail.com</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted text-truncate"> Secteur Activite :</p>
+          <p>Technologie</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted text-truncate">Stade developpement :</p>
+          <p>Début</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted text-truncate">Numero d'indentification :</p>
+          <p class=""> 09_JKol09</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted text-truncate">Date de Création :</p>
+          <p> 01/08/2022</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted">Propriétaire :</p>
+          <p> Obama</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted"> Forme juridique :</p>
+          <p>SA</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted"> Chiffre d'affaire :</p>
+          <p>10 millions</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted text-truncate">Localisation :</p>
+          <p> Bamako,Lafiabougou</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted">Pays :</p>
+          <p> Mali</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="text-muted">Status :</p>
+          <p> Valider</p>
+        </div>
+      </div>
+      <div class="mt-5 mb-5">
+        <ion-button color="danger" expand="block" (click)="logout()">deconnexion</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<!-- fghjklmjgf -->
+
+<!-- <ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.75" [breakpoints]="[0, 0.25, 0.5, 0.75]"
+  handleBehavior="cycle">
+  <ng-template>
+    <ion-content class="ion-padding">
+      <div class="ion-margin-top text-center">
+        <ion-label>Quel type d'investissement souhaitez vous faire ?</ion-label>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal> -->
+<!-- lkjhgfdfghjkl -->
+<ion-modal #modal trigger="open-modal" [presentingElement]="presentingElement">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Modal</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="modal.dismiss()">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="container">
+        <!-- debut du form  -->
+        <form>
+          <div class="mt-0">
+            <ion-item>
+              <ion-label position="floating">Nom complet</ion-label>
+              <ion-input type="text" placeholder="Nom complet"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Numero</ion-label>
+              <ion-input type="number" placeholder="Numero"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Pseudo</ion-label>
+              <ion-input type="text" placeholder="Pseudo"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Adresse</ion-label>
+              <ion-input type="text" placeholder="Adresse"></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Mots de passe</ion-label>
+              <ion-input type="password" placeholder="Mots de passe"></ion-input>
+            </ion-item>
+            <ion-item>
+              <input type="file" placeholder="photo">
+            </ion-item>
+          </div>
+          <div class="mt-5">
+            <ion-button expand="block" type="submit" style="margin-top: 20px;">modifier</ion-button>
+          </div>
+        </form>
+      </div>
+      <!-- fin du form -->
+    </ion-content>
+  </ng-template>
+</ion-modal>
