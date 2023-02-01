@@ -28,4 +28,9 @@ export class PretService {
   listerPretParInvestisseur(id_users: number): Observable<any>{
     return this.http.get(`${AUTH_API}/invest/${id_users}`);
   }
+
+  //Methode pour recuperer l'ensemble des pret par projet 
+  listerlespreteurdunProjet(idprojet: number): Observable<any>{
+    return this.http.get(`${AUTH_API}/Projets/${idprojet}`)
+  }
 }

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Vos projets</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let nproj of vostartups " >  
+      <img alt="Silhouette of mountains" src="{{nproj.image}}" class="immmmg" />
+    <ion-card-header>
+      <ion-card-title>{{nproj.nomprojets}}</ion-card-title>
+      <ion-card-subtitle>My Farming - Application de suivie et production des volaille</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{nproj.description}}
+    </ion-card-content>
+    <div class="d-flex justify-content-around mb-3  ion-text-center">
+      <button type="button" [routerLink]="['/investstartp',nproj.idprojet]" class="btn buttonn">Action</button>
+      <button type="button" [routerLink]="['/preteur',nproj.idprojet]" class="btn buttonn">Prêt</button>
+      <button type="button" [routerLink]="['/donnateur',nproj.idprojet]" class="btn buttonn">Donation</button>
+    </div>
+  </ion-card>
+</ion-content>

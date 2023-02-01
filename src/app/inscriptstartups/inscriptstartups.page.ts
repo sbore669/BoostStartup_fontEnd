@@ -59,7 +59,7 @@ export class InscriptstartupsPage implements OnInit {
 
   isLinear = false;
 
-  constructor( private authService: AuthService, private router: Router) { }
+  constructor( private authService: AuthService, private router: Router,private fb: FormBuilder) { }
 
   step = 1;
 

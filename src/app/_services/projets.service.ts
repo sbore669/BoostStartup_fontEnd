@@ -32,7 +32,6 @@ export class ProjetsService {
   }
 
   //Methode pour recuperrer tout les projets
-
   listdesprojets(): Observable<any> {
 
     return this.http.get(`${AUTH_API}/afficher`);
@@ -43,10 +42,18 @@ export class ProjetsService {
     return this.http.get(`${AUTH_API}/aff/${idprojet}`);
   }
 
-  
   //Methode pour recuperer les projets d'une startups
-
   recupererProjetsStartups(id_users: number): Observable<any>{
     return this.http.get(`${AUTH_API}/startups/${id_users}`)
+  }
+
+  //Methode pour determiner la somme Collecter par l'ensemble de Projets
+  lasommedesprojetsStartups(id_users:number): Observable<any>{
+    return this.http.get(`${AUTH_API}/totalObtenu/${id_users}`)
+  }
+
+  //Methode pour compte le nombre de projets cree pour une Startups
+  nombredeprojetsparStartups(id_users:number): Observable<any>{
+    return this.http.get(`${AUTH_API}/nbProjets/${id_users}`)
   }
 }

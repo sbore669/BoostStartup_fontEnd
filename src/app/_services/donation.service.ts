@@ -28,4 +28,9 @@ export class DonationService {
   listerDonationParInvestisseur(id_users: number): Observable<any>{
     return this.http.get(`${AUTH_API}/invest/${id_users}`);
   }
+  
+  //Methode pour recuperer l'ensemble des investisseurs par 
+  listerlesdonnateurdunProjet(idprojet: number): Observable<any>{
+    return this.http.get(`${AUTH_API}/Projets/${idprojet}`)
+  }
 }
