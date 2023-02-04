@@ -15,12 +15,12 @@ ion-toolbar{
 }
 ion-header{
   //  background-color: #edeff1;
-    background-color: #a0bddb;
+    background-color: #BAD5E5;
     border: none;
 }
 .cont {
     // background: #edeff1;
-    background: #a0bddb;
+    background: #BAD5E5;
 }
 .tittttre{
     color: #000000;
@@ -251,6 +251,9 @@ h6{
     color: #fff;
     margin: 5px auto;
 }
-ng-template{
-    background: #7ED957;
-}
+.mesicons {
+    font-size: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+  }

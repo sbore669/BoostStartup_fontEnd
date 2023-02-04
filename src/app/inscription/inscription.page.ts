@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Investisseur } from '../Model/investisseur';
 import { AuthService } from '../_services/auth.service';
@@ -13,13 +13,13 @@ import { TypeprojetsService } from '../_services/typeprojets.service';
 export class InscriptionPage implements OnInit {
 
   form: any = {
-    username: null,
-    email: null,
-    password: null,
-    nomcomplet: null,
-    adresse: null,
-    photo: null,
-    telephone: null,
+    username: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+    email: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(30)]),
+    nomcomplet: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]),
+    adresse: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(30)]),
+    photo: new FormControl('', [Validators.requiredTrue]),
+    telephone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]),
   };
   isSuccessful = false;
   isSignUpFailed = false;

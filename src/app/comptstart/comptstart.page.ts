@@ -42,15 +42,15 @@ export class ComptstartPage implements OnInit {
 }
 
   onSubmit(): void {
+    console.log(this.form);
     const { username, password } = this.form;
 
     this.authService.login(username, password).subscribe({
-      next: data => {
-       
+      next: data => {      
 
         if(data.roles[0]=='ROLE_STARTUPS'){
           this.storageService.saveUser(data);
-          console.log(data);
+          console.log("===================",data);
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           this.router.navigate(['/tabs/dashbord-start']);

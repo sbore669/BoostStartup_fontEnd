@@ -44,7 +44,7 @@ export class ProfilPage implements OnInit {
         this.storageService.clean();
 
         // window.location.reload();
-        this.router.navigate(['/connexion']);
+        this.router.navigate(['/typecompte']);
       },
       error: err => {
         console.log(err);

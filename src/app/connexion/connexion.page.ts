@@ -33,6 +33,36 @@ export class ConnexionPage implements OnInit {
   }
 
   onSubmit(): void {
+    console.log(this.form);
+    const { username, password } = this.form;
+
+    this.authService.login(username, password).subscribe({
+      next: data => {      
+
+        if(data.roles[0]=='ROLE_USER'){
+          this.storageService.saveUser(data);
+          console.log("===================",data);
+          this.isLoginFailed = false;
+          this.isLoggedIn = true;
+          this.router.navigate(['/tabac/acceuil']);
+        }else{
+          this.errorMessage = 'Pas Autoriser ';
+          this.isLoginFailed = true;
+          
+        }
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+        if(this.errorMessage == "Votre Startups est en attente de Validation")
+        {
+         // this.router.navigate(['/validation']);
+        }
+      }
+    });
+  }
+
+ /* onSubmit(): void {
     const { username, password } = this.form;
 
     this.authService.login(username, password).subscribe({
@@ -50,7 +80,7 @@ export class ConnexionPage implements OnInit {
         this.isLoginFailed = true;
       }
     });
-  }
+  }*/
 
   reloadPage(): void {
     window.location.reload();
@@ -70,5 +100,4 @@ export class ConnexionPage implements OnInit {
       }
     });
   }
-
 }

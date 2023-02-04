@@ -1,12 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>startups</ion-title>
+    <ion-title>Nos Startup</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="" tyle="margin-bottom: 15vh;">
+    <!-- le card row -->
+    <ion-row>
+      <ion-col class="mt-" *ngFor="let start of startupss">
+        <ion-card class="desc">
+          <div class="w-50 gauche">
+            <div class="photostart">
+              <div class="tof">
+                <img class="imm" src="{{start.photo}}" alt="" srcset="">
+              </div>
+            </div>
+            <div class="datepub">
+              <span>{{start.dateCreation | date: 'dd/MM/yyyy'}}</span>
+            </div>
+          </div>
+          <div class="w-100 droite">
+            <div class="infoo">
+              <h3>{{start.nomStartups}}</h3>
+              <span>{{start.proprietaire}}</span><br>
+              <span>{{start.secteurActivite}}</span>
+            </div>
+            <div class="bas">
+              {{start.chiffreAffaire}}
+            </div>
+          </div>
+        </ion-card>
+      </ion-col>
+      
+    </ion-row>
+    <!-- le card row -->
 
-  
-
-
+  </div>
 </ion-content>

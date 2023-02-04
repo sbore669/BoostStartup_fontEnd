@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import Swal from 'sweetalert2';
+import { FormaddComponent } from '../formadd/formadd.component';
 import { Projets } from '../Model/projets';
 import { AuthService } from '../_services/auth.service';
 import { ProjetsService } from '../_services/projets.service';
@@ -23,28 +25,41 @@ export class DashbordStartPage implements OnInit {
   projets: Projets = new Projets();
   Idtypeprojets!: number;
   id_users!: number;
-  
-
-  
   step = 1;
   typesProjet: any;
   sommetotale: any;
   nbreprojets: any;
-  
+  vostartups: any;
+  modal: any;
+
+  form: any ={
+    nomprojets: null,
+    objectif: null,
+    budgetPrevisonnel: null,
+    pret_maximun: null,
+    pourcentage: null,
+    objectifpret: null,
+    description: null,
+    minimun_donation: null,
+    pret_minimun: null,
+    nbretotal_action: null,
+    dureeProjet: null,
+    prix_action: null,
+    photo: null,
+  }
+
 
   constructor(private authService: AuthService,
-     private storageService: StorageService,
-     private router: Router,
-     private projetsService: ProjetsService,
-     private typeprojets: TypeprojetsService) { }
-
-  
-
+    private storageService: StorageService,
+    private router: Router,
+    private projetsService: ProjetsService,
+    private typeprojets: TypeprojetsService,
+    private modalCtrl: ModalController) { }
   ngOnInit() {
     this.currentUser = this.storageService.getUser();
-    this.presentingElement = document.querySelector('.ion-page');
+  //  this.presentingElement = document.querySelector('.ion-page');
     console.log(this.currentUser);
-    this.typeprojets.listetypeprojets().subscribe(data =>{
+    this.typeprojets.listetypeprojets().subscribe(data => {
       this.typesProjet = data
       console.log(data)
     })
@@ -52,32 +67,44 @@ export class DashbordStartPage implements OnInit {
     this.recupererTotalprojetsParstartups();
   }
 
-  nextStep(){
+  nextStep() {
     this.suivant = false;
     this.step++;
   }
-  backStep(){
+  backStep() {
     this.suivant = true;
     this.step--;
   }
-  options={
-    slidesPerView:1,   // NOMBRE DE SLIDE PAR PAGE = 1
-    centeredSlider:true,
-   // loop:true,
-    spaceBetween:10,
-    autoplay:false
+  options = {
+    slidesPerView: 1,   // NOMBRE DE SLIDE PAR PAGE = 1
+    centeredSlider: true,
+    // loop:true,
+    spaceBetween: 10,
+    autoplay: false
+  }
+  // ferme() {
+  //   this.modal.dismiss(null, 'ferme');
+  // }
+  // async closeModal() {
+  //   this.recupererProjetStartups();
+  //   await this.modal.dismiss(null, 'cancel');
+  //   this.router.navigateByUrl('/');
+    
+  //  }
+   reloadPage(): void {
+    window.location.reload();
   }
 
 
 
-  onFileSelected(event: any) {
+/*  onFileSelected(event: any) {
     this.selectedFile = <File>event.target.files[0];
-  }
+  }*/
 
   onSubmit(form: NgForm) {
     console.log(this.projets);
     this.projetsService.creerprojets(this.currentUser.id, this.Idtypeprojets, this.selectedFile, this.projets)
-      .subscribe( res => {
+      .subscribe(res => {
         console.log(res);
         Swal.fire({
           heightAuto: false,
@@ -86,40 +113,57 @@ export class DashbordStartPage implements OnInit {
           showConfirmButton: false,
           timer: 2500
         })
+        this.recupererProjetStartups();
         this.router.navigateByUrl('/tabs/projetstartups');
         // modal.dismiss();
+        this.reloadPage()
         if (res.message == "Projet créé avec succès") {
-          
+
         } else {
           console.log("erreur");
         }
       });
   }
-
-  recupererTotalstartups(){
+  recupererProjetStartups() {
     const id_users = this.currentUser.id
-    this.projetsService.lasommedesprojetsStartups(id_users).subscribe(data =>{
+    console.log(id_users);
+    this.projetsService.recupererProjetsStartups(id_users).subscribe(data => {
+      this.vostartups = data
+      console.log(this.vostartups)
+    });
+  }
+  recupererTotalstartups() {
+    const id_users = this.currentUser.id
+    this.projetsService.lasommedesprojetsStartups(id_users).subscribe(data => {
       this.sommetotale = data
       console.log(this.sommetotale)
     })
   }
 
-  recupererTotalprojetsParstartups(){
+  recupererTotalprojetsParstartups() {
     const id_users = this.currentUser.id
-    this.projetsService.nombredeprojetsparStartups(id_users).subscribe(data =>{
+    this.projetsService.nombredeprojetsparStartups(id_users).subscribe(data => {
       this.nbreprojets = data
       console.log(this.nbreprojets)
     })
   }
+  //Modal page
+  message = 'This modal example uses the modalController to present and dismiss modals.';
 
-  // recupererProjetStartups(){
-  //   const id_users = this.currentUser.id
-  //   console.log(id_users);
-  //   this.projetsService.recupererProjetsStartups(id_users).subscribe(data =>{
-  //     this.vostartups = data
-  //     console.log(this.vostartups)
-  //   });
-  // }
+  
 
+  async openModal() {
+    const modal = await this.modalCtrl.create({
+      component: FormaddComponent,
+    });
+    modal.present();
+
+    // const { data, role } = await modal.onWillDismiss();
+
+    // if (role === 'confirm') {
+    //   this.message = `Hello, ${data}!`;
+    // }
+  }
+  //fin Modal
 
 }

@@ -12,9 +12,9 @@ import Swal from 'sweetalert2';
 })
 export class PaiementActionPage implements OnInit {
 
-  Idprojet:any
-  idUsers:any
-  nombreaction:any
+  Idprojet: any
+  idUsers: any
+  nombreaction: any
   message: any;
   currentUser: any
   detailsProjets: any;
@@ -34,25 +34,25 @@ export class PaiementActionPage implements OnInit {
   prettotalobtenu: any;
   prix_action: any;
   nomStartups: any;
-  idprojetSelect:any;
-  apayer:any
+  idprojetSelect: any;
+  apayer: any
   messageService: any;
 
-  constructor(private router: Router,private actionService: ActionService,
-    private storageService: StorageService,private projetsService: ProjetsService,
+  constructor(private router: Router, private actionService: ActionService,
+    private storageService: StorageService, private projetsService: ProjetsService,
     private routes: ActivatedRoute
-     ) { }
+  ) { }
 
   ngOnInit() {
     this.currentUser = this.storageService.getUser();
     this.recupererProjetDetails();
   }
-  
+
   recupererProjetDetails() {
     this.idprojetSelect = this.routes.snapshot.params['idprojet'];
     console.log(this.idprojetSelect + 'yyyyyyyyyyyyyyyyyyyyyyiddd');
     this.projetsService.recupererProjetsparId(this.idprojetSelect).subscribe(data => {
-    this.detailsProjets = data
+      this.detailsProjets = data
 
       console.log(this.detailsProjets);
       this.nomprojets = this.detailsProjets.nomprojets
@@ -68,9 +68,9 @@ export class PaiementActionPage implements OnInit {
       this.pourcentage = this.detailsProjets.pourcentage
       this.pret_maximun = this.detailsProjets.pret_maximun
       this.pret_minimun = this.detailsProjets.pret_minimun
-      this.prettotalobtenu =  this.detailsProjets.prettotalobtenu
+      this.prettotalobtenu = this.detailsProjets.prettotalobtenu
       this.prix_action = this.detailsProjets.prix_action
-      this.nomStartups = this.detailsProjets.nomStartups 
+      this.nomStartups = this.detailsProjets.nomStartups
     });
 
   }
@@ -86,7 +86,7 @@ export class PaiementActionPage implements OnInit {
   //       timer: 2500
   //     })
   //     this.message = data;
-      
+
   //   }, error => console.log(error));
   // }
   faireuneaction() {
@@ -101,6 +101,8 @@ export class PaiementActionPage implements OnInit {
           timer: 2500
         })
         this.message = data;
+        this.router.navigate(['/tabac/mesinvestissement']);
+        this.reloadPage();
       }, error => {
         console.log(error);
         Swal.fire({
@@ -111,6 +113,9 @@ export class PaiementActionPage implements OnInit {
           timer: 2500
         })
       });
+  }
+  reloadPage(): void {
+    window.location.reload();
   }
 
   /* 
