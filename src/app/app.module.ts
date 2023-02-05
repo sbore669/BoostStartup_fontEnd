@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,9 +12,10 @@ import { NgChartsModule } from 'ng2-charts';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { GuardsGuard } from './_services/guards.guard';
+import { FormaddComponent } from './formadd/formadd.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,FormaddComponent],
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,    
@@ -22,6 +23,7 @@ import { GuardsGuard } from './_services/guards.guard';
     ReactiveFormsModule,
     NgChartsModule,
     HttpClientModule,
+    FormsModule,
     
     
 

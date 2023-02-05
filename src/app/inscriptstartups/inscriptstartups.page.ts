@@ -45,7 +45,6 @@ export class InscriptstartupsPage implements OnInit {
     pays:null,
   }
   selectedFile!: File;
-  // investisseur: Investisseur = new Investisseur();
 
   startups: Startups = new Startups();
 

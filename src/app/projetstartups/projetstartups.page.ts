@@ -22,6 +22,7 @@ export class ProjetstartupsPage implements OnInit {
     this.currentUser = this.storageService.getUser();
     this.recupererProjetStartups();
     console.log(this.currentUser.id + ' venuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu');
+    
   }
 
   recupererProjetStartups(){
@@ -31,6 +32,9 @@ export class ProjetstartupsPage implements OnInit {
       this.vostartups = data
       console.log(this.vostartups)
     });
+  }
+  reloadPage(): void {
+    window.location.reload();
   }
 
 }

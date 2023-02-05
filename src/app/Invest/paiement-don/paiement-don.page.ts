@@ -83,6 +83,8 @@ export class PaiementDonPage implements OnInit {
         showConfirmButton: false,
         timer: 2500
       })
+      this.router.navigate(['/tabac/mesinvestissement']);
+      this.reloadPage();
     }, error => {
       console.log(error);
       Swal.fire({
@@ -93,6 +95,9 @@ export class PaiementDonPage implements OnInit {
         timer: 2500
       })
     });
+  }
+  reloadPage(): void {
+    window.location.reload();
   }
 
 

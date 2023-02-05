@@ -81,3 +81,24 @@
 p{
     font-size: 13px;
 }
+///////////////////////////////////////////////////////////////
+
+.s-content {
+    padding: 8px;
+    border-radius: 16px;
+    background: #f9f9f9;
+    margin-bottom: 20px;
+    .set {
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+        border-bottom: 1px solid #d7d8da;
+        .label {
+            font-weight: 700;
+        }
+    }
+    .set:last-child{
+        border: none;
+    }
+}

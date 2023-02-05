@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Welcome</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container">
+    <!-- debut du formulaire pour ajouter un projets -->
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+      <!-- <form> -->
+      <div [hidden]="!suivant">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Nom du projets<span class="rrii"> *</span></ion-label>
+            <ion-input type="text" required minlength="3" maxlength="20" placeholder="Nom du projets" name="nomprojets"
+              [(ngModel)]="projets.nomprojets"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Objectif du projet<span class="rrii"> *</span></ion-label>
+            <ion-input type="text" placeholder="Quel est l'objectif du projet ?" name="objectif"
+              [(ngModel)]="projets.objectif" required maxlength="60" minlength="10"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Budget Previsionnel<span class="rrii"> *</span></ion-label>
+            <ion-input type="number" placeholder="le Budget du projets" name="budgetPrevisonnel"
+              [(ngModel)]="projets.budgetPrevisonnel"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Prêt maximum<span class="rrii"> *</span></ion-label>
+            <ion-input type="number" placeholder="Le pret maximum" name="pret_maximun"
+              [(ngModel)]="projets.pret_maximun" required maxlength="20" minlength="4"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Pourcentage du prêt<span class="rrii"> *</span></ion-label>
+            <ion-input type="tel" placeholder="Pourcentage sur le prêt" name="pourcentage"
+              [(ngModel)]="projets.pourcentage" min="0" max="100" minlength="1" maxlength="2"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Objectif du prêt<span class="rrii"> *</span></ion-label>
+            <ion-input type="number" placeholder="objectif prêt sur le pret" name="objectifpret"
+              [(ngModel)]="projets.objectifpret" required maxlength="20" minlength="4"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Description du projets<span class="rrii"> *</span></ion-label>
+            <ion-textarea rows="3" type="text" placeholder="Decrivez votre projet" name="description"
+              [(ngModel)]="projets.description" required maxlength="200" minlength="4"></ion-textarea>
+          </ion-item>
+
+          <div class="d-flex justify-content-center mt-3 mb-5 btnn">
+            <a class="btn" (click)="nextStep()">Suivant</a>
+          </div>
+
+        </ion-list>
+      </div>
+
+
+      <!-- 2eme etapes du formulaire -->
+
+      <div *ngIf="step === 2" [hidden]="suivant">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">minimun de donation<span class="rrii"> *</span></ion-label>
+            <ion-input type="number" placeholder="minimun_donation" name="minimun_donation"
+              [(ngModel)]="projets.minimun_donation"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Pret minimun<span class="rrii"> *</span></ion-label>
+            <ion-input type="number" placeholder="pret_minimun" name="pret_minimun"
+              [(ngModel)]="projets.pret_minimun"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Total Action<span class="rrii"> *</span></ion-label>
+            <ion-input type="number" placeholder="Nombre total d'actions en vente" name="nbretotal_action"
+              [(ngModel)]="projets.nbretotal_action"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Durée du projet<span class="rrii"> *</span></ion-label>
+            <ion-input type="text" placeholder="Quels est la durée du projets" name="dureeProjet"
+              [(ngModel)]="projets.dureeProjet"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Prix d'action<span class="rrii"> *</span></ion-label>
+            <ion-input type="number" placeholder="le prix d'une action" name="prix_action"
+              [(ngModel)]="projets.prix_action" required maxlength="20" minlength="4"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Type de projets<span class="rrii"> *</span></ion-label>
+            <ion-select name="idTypeProjet" placeholder="Type de projets" [(ngModel)]="Idtypeprojets" required>
+              <ion-select-option *ngFor="let type of typesProjet"
+                [value]="type.idtypeprojets">{{type.nomtype}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <input type="file" placeholder="photo" (change)="onFileSelected($event)" name="photo">
+          </ion-item>
+        </ion-list>
+        <div class="d-flex justify-content-around mt-3 btnn">
+          <a class="btn-r" (click)="backStep()">Suivant</a>
+         <ion-button class="btn" expand="block" [disabled]="!registerForm.valid" type="submit">Creer la Collecte</ion-button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- fin du modal pour ajouter un projets -->
+</ion-content>

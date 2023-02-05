@@ -2,9 +2,9 @@
   <div class="container">
     <div class="d-flex justify-content-center mt-1">
       <ion-img src="/assets/gif/Tablet login.gif" class="w-100 h-100" alt=""></ion-img>
-      <div class="alert alert-success" *ngIf="isLoggedIn">
+      <!-- <div class="alert alert-success" *ngIf="isLoggedIn">
         Logged in as {{ roles }}.
-      </div>
+      </div> -->
     </div>
     <div class="mt-1">
       <h1 style="text-align: center;">Connexion</h1>
@@ -40,7 +40,7 @@
       <div class="mt-2 me-3 mdepss">
         <a href="" class="text-decoration-none">Mots de passe oublié ?</a>
       </div>
-      <ion-button expand="block" type="submit" class="mt-2">S'authentifier</ion-button>
+      <ion-button expand="block"  [disabled]="!f.valid" type="submit" class="mt-2">S'authentifier</ion-button>
       <div class="form-group">
         <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
           Login failed: {{ errorMessage }}

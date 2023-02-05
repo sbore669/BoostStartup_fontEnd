@@ -28,7 +28,7 @@ export class PaiementpretPage implements OnInit {
   pourcentage: any;
   pret_maximun: any;
   pret_minimun: any;
-  prettotalobtenu: any;
+  Prettotalobtenu: any;
   prix_action: any;
   nomStartups: any;
   montantInvest: any;
@@ -68,7 +68,7 @@ export class PaiementpretPage implements OnInit {
       this.pourcentage = this.detailsProjets.pourcentage
       this.pret_maximun = this.detailsProjets.pret_maximun
       this.pret_minimun = this.detailsProjets.pret_minimun
-      this.prettotalobtenu =  this.detailsProjets.prettotalobtenu
+      this.Prettotalobtenu =  this.detailsProjets.prettotalobtenu
       this.prix_action = this.detailsProjets.prix_action
       this.nomStartups = this.detailsProjets.nomStartups 
     });
@@ -84,6 +84,8 @@ export class PaiementpretPage implements OnInit {
         showConfirmButton: false,
         timer: 2500
       })
+      this.router.navigate(['/tabac/mesinvestissement']);
+      //this.reloadPage();
     }, error => {
       console.log(error);
       Swal.fire({
@@ -94,6 +96,9 @@ export class PaiementpretPage implements OnInit {
         timer: 2500
       })
     });
+  }
+  reloadPage(): void {
+    window.location.reload();
   }
 
 }

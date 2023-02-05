@@ -137,3 +137,10 @@ p {
 .mesdetails{
     width: 90%; margin-left: auto;margin-right: auto;
 }
+
+ion-button{
+    --background: #1c475e;
+    --color: #FFFFFF;
+    --border-radius: 15px;
+    --box-shadow: 0 4px 4px rgb(0, 0, 0, 0.25);
+}
