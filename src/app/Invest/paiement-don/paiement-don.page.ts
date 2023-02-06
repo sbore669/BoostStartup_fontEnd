@@ -32,6 +32,7 @@ export class PaiementDonPage implements OnInit {
   nomStartups: any;
   montantInvest: any;
   message: any;
+  errr: any;
 
   constructor(private router: Router,private donationService: DonationService,
     private storageService: StorageService,private projetsService: ProjetsService,
@@ -84,21 +85,21 @@ export class PaiementDonPage implements OnInit {
         timer: 2500
       })
       this.router.navigate(['/tabac/mesinvestissement']);
-      this.reloadPage();
     }, error => {
+      this.errr = error
       console.log(error);
       Swal.fire({
         heightAuto: false,
         icon: 'error',
-        text: 'Erreur lors de la donnation',
+        text: this.errr.error.message,
         showConfirmButton: false,
         timer: 2500
       })
     });
   }
-  reloadPage(): void {
+/*  reloadPage(): void {
     window.location.reload();
-  }
+  }*/
 
 
 }
