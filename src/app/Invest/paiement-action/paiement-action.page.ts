@@ -37,6 +37,7 @@ export class PaiementActionPage implements OnInit {
   idprojetSelect: any;
   apayer: any
   messageService: any;
+  errr: any;
 
   constructor(private router: Router, private actionService: ActionService,
     private storageService: StorageService, private projetsService: ProjetsService,
@@ -46,6 +47,7 @@ export class PaiementActionPage implements OnInit {
   ngOnInit() {
     this.currentUser = this.storageService.getUser();
     this.recupererProjetDetails();
+    
   }
 
   recupererProjetDetails() {
@@ -102,20 +104,17 @@ export class PaiementActionPage implements OnInit {
         })
         this.message = data;
         this.router.navigate(['/tabac/mesinvestissement']);
-        this.reloadPage();
       }, error => {
+        this.errr = error
         console.log(error);
         Swal.fire({
           heightAuto: false,
           icon: 'error',
-          text: 'Erreur lors de l\'acquisition d\'action',
+          text: this.errr.error,
           showConfirmButton: false,
           timer: 2500
         })
       });
-  }
-  reloadPage(): void {
-    window.location.reload();
   }
 
   /* 
