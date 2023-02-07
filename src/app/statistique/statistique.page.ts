@@ -4,6 +4,7 @@ import { ChartEvent } from 'chart.js/dist/core/core.plugins';
 import { ChartType } from 'chart.js/dist/types/index';
 import { BaseChartDirective } from 'ng2-charts';
 import { AuthService } from '../_services/auth.service';
+import { ProjetsService } from '../_services/projets.service';
 import { StorageService } from '../_services/storage.service';
 
 
@@ -17,16 +18,37 @@ import { StorageService } from '../_services/storage.service';
 export class StatistiquePage implements OnInit {
   
   currentUser: any;
+  sommetotale: any;
+  nbreprojets: any;
 
   constructor(private authService: AuthService,
-    private storageService: StorageService,){}
+    private storageService: StorageService,
+    private projetsService: ProjetsService,){}
     
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
     console.log(this.currentUser)
+    this.recupererTotalstartups();
+    this.recupererTotalprojetsParstartups();
+
     
   }
-  // 
+  //
+  recupererTotalstartups() {
+    const id_users = this.currentUser.id
+    this.projetsService.lasommedesprojetsStartups(id_users).subscribe(data => {
+      this.sommetotale = data
+      console.log(this.sommetotale)
+    })
+  }
+
+  recupererTotalprojetsParstartups() {
+    const id_users = this.currentUser.id
+    this.projetsService.nombredeprojetsparStartups(id_users).subscribe(data => {
+      this.nbreprojets = data
+      console.log(this.nbreprojets)
+    })
+  } 
   
 }
 
