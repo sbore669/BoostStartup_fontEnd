@@ -34,6 +34,7 @@ export class PaiementpretPage implements OnInit {
   montantInvest: any;
   message: any;
   errr: any;
+  pree: any;
 
   constructor(private router: Router,private pretService: PretService,
     private storageService: StorageService,private projetsService: ProjetsService,
@@ -77,13 +78,13 @@ export class PaiementpretPage implements OnInit {
 
   envoyepret(){
     this.pretService.faireunPret(this.idprojetSelect, this.currentUser.id, this.montantInvest).subscribe(data =>{
-      this.message = data;
+      this.pree = data;
       Swal.fire({
         heightAuto: false,
         icon: 'success',
-        text: 'Prêt effectuer avec succès',
+        text: this.pree.message,
         showConfirmButton: false,
-        timer: 2500
+        timer: 5000
       })
       this.router.navigate(['/tabac/mesinvestissement']);
     }, error => {

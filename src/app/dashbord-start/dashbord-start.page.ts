@@ -57,7 +57,7 @@ export class DashbordStartPage implements OnInit {
     private modalCtrl: ModalController) { }
   ngOnInit() {
     this.currentUser = this.storageService.getUser();
-  //  this.presentingElement = document.querySelector('.ion-page');
+  //this.presentingElement = document.querySelector('.ion-page');
     console.log(this.currentUser);
     this.typeprojets.listetypeprojets().subscribe(data => {
       this.typesProjet = data

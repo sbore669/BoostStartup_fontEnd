@@ -38,6 +38,7 @@ export class PaiementActionPage implements OnInit {
   apayer: any
   messageService: any;
   errr: any;
+  acccc: any;
 
   constructor(private router: Router, private actionService: ActionService,
     private storageService: StorageService, private projetsService: ProjetsService,
@@ -47,7 +48,6 @@ export class PaiementActionPage implements OnInit {
   ngOnInit() {
     this.currentUser = this.storageService.getUser();
     this.recupererProjetDetails();
-    
   }
 
   recupererProjetDetails() {
@@ -76,31 +76,18 @@ export class PaiementActionPage implements OnInit {
     });
 
   }
-  // faireuneaction() {
-  //   this.actionService.acquerirUneaction(this.idprojetSelect, this.currentUser.id, this.nombreaction)
-  //   .subscribe(data => {
-  //     console.log('ddddddddddddddiuoiduiooudoiduoiduodkeita')
-  //     Swal.fire({
-  //       heightAuto: false,
-  //       icon: 'success',
-  //       text: 'Action acquis avec succès',
-  //       showConfirmButton: false,
-  //       timer: 2500
-  //     })
-  //     this.message = data;
 
-  //   }, error => console.log(error));
-  // }
   faireuneaction() {
     this.actionService.acquerirUneaction(this.idprojetSelect, this.currentUser.id, this.nombreaction)
       .subscribe(data => {
-        console.log('ddddddddddddddiuoiduiooudoiduoiduodkeita')
+        this.acccc = data
+        console.log(this.acccc)
         Swal.fire({
           heightAuto: false,
           icon: 'success',
-          text: 'Action acquis avec succès',
+          text: this.acccc.message,
           showConfirmButton: false,
-          timer: 2500
+          timer: 5000
         })
         this.message = data;
         this.router.navigate(['/tabac/mesinvestissement']);
@@ -116,15 +103,5 @@ export class PaiementActionPage implements OnInit {
         })
       });
   }
-
-  /* 
-  creeaction() {
-    this.actionService.creeaction(this.idUsers, this.Idprojet, this.nombreaction)
-      .subscribe(data => {
-        this.message = data;
-      }, error => console.log(error));
-  }
-}
-  */
 
 }

@@ -33,6 +33,7 @@ export class PaiementDonPage implements OnInit {
   montantInvest: any;
   message: any;
   errr: any;
+  donn: any;
 
   constructor(private router: Router,private donationService: DonationService,
     private storageService: StorageService,private projetsService: ProjetsService,
@@ -76,13 +77,14 @@ export class PaiementDonPage implements OnInit {
 
   envoyedonation(){
     this.donationService.faireunedonation(this.idprojetSelect, this.currentUser.id, this.montantInvest).subscribe(data =>{
-      this.message = data;
+      this.donn = data;
+      console.log(this.message)
       Swal.fire({
         heightAuto: false,
         icon: 'success',
-        text: 'donnation effectuer avec succès',
+        text: this.donn.message,
         showConfirmButton: false,
-        timer: 2500
+        timer: 5000
       })
       this.router.navigate(['/tabac/mesinvestissement']);
     }, error => {

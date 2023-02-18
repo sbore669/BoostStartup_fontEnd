@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { InvestisseursService } from '../_services/investisseurs.service';
+import { StartupsService } from '../_services/startups.service';
 import { StorageService } from '../_services/storage.service';
 
 @Component({
@@ -14,27 +15,37 @@ export class ProfilStartupsPage implements OnInit {
   currentUser: any
   inv: any;
   telephone: any;
+  startup: any
 
   constructor(private authService: AuthService,
      private storageService: StorageService,
      private investisseursService: InvestisseursService,
-     private router: Router) { }
+     private router: Router,
+     private startupsService: StartupsService,
+     ) { }
 
   ngOnInit()  {
     //Permet de recupperer les information de l'utilisateur actuelle connecter
     this.currentUser = this.storageService.getUser();
-    this.recupererInvestisseurId();
+    this.RecuperStartupParId();
     this.presentingElement = document.querySelector('.ion-page');
   }
-  recupererInvestisseurId(){
-    const id_users = this.currentUser.id
-    console.log(id_users);
-    this.investisseursService.listerInvestisseursparId(id_users).subscribe(data =>{
-      this.inv = data
-      console.log(this.inv);
-      this.telephone = this.inv.telephone
-    })
+  // recupererInvestisseurId(){
+  //   const id_users = this.currentUser.id
+  //   console.log(id_users);
+  //   this.investisseursService.listerInvestisseursparId(id_users).subscribe(data =>{
+  //     this.inv = data
+  //     console.log(this.inv);
+  //     this.telephone = this.inv.telephone
+  //   })
     
+  // }
+  RecuperStartupParId() {
+    const idUsers = this.currentUser.id
+    this.startupsService.listerStartupsParId(idUsers).subscribe(data => {
+      this.startup = data
+      console.log(this.startup)
+    })
   }
 
   logout(): void {

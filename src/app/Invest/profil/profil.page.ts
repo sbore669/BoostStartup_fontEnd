@@ -26,6 +26,7 @@ export class ProfilPage implements OnInit {
     this.recupererInvestisseurId();
     this.presentingElement = document.querySelector('.ion-page');
   }
+  
   recupererInvestisseurId(){
     const id_users = this.currentUser.id
     console.log(id_users);
