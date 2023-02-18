@@ -15,6 +15,7 @@ import { TypeprojetsService } from '../_services/typeprojets.service';
 })
 export class FormaddComponent implements OnInit {
   name!: any;
+  errr: any;
 
   form: any = {
     nomprojets: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
@@ -92,12 +93,22 @@ export class FormaddComponent implements OnInit {
           Swal.fire({
             heightAuto: false,
             icon: 'error',
-            text: 'Erreur dans le formulaire',
+            text: this.errr.error.message,
             showConfirmButton: false,
             timer: 2500
           })
           console.log("erreur");
         }
+      }, error => {
+        this.errr = error
+        console.log(error);
+        Swal.fire({
+          heightAuto: false,
+          icon: 'error',
+          text: this.errr.error.message,
+          showConfirmButton: false,
+          timer: 2500
+        })
       });
   }
 
