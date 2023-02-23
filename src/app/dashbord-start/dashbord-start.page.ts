@@ -65,6 +65,7 @@ export class DashbordStartPage implements OnInit {
     })
     this.recupererTotalstartups();
     this.recupererTotalprojetsParstartups();
+    this.recupererProjetStartups();
   }
 
   nextStep() {
@@ -82,48 +83,11 @@ export class DashbordStartPage implements OnInit {
     spaceBetween: 10,
     autoplay: false
   }
-  // ferme() {
-  //   this.modal.dismiss(null, 'ferme');
-  // }
-  // async closeModal() {
-  //   this.recupererProjetStartups();
-  //   await this.modal.dismiss(null, 'cancel');
-  //   this.router.navigateByUrl('/');
-    
-  //  }
+
    reloadPage(): void {
     window.location.reload();
   }
 
-
-
-/*  onFileSelected(event: any) {
-    this.selectedFile = <File>event.target.files[0];
-  }*/
-
-  onSubmit(form: NgForm) {
-    console.log(this.projets);
-    this.projetsService.creerprojets(this.currentUser.id, this.Idtypeprojets, this.selectedFile, this.projets)
-      .subscribe(res => {
-        console.log(res);
-        Swal.fire({
-          heightAuto: false,
-          icon: 'success',
-          text: 'Projet créé avec succès',
-          showConfirmButton: false,
-          timer: 2500
-        })
-        this.recupererProjetStartups();
-        this.router.navigateByUrl('/tabs/projetstartups');
-        // modal.dismiss();
-        this.reloadPage()
-        if (res.message == "Projet créé avec succès") {
-
-        } else {
-          console.log("erreur");
-        }
-      });
-  }
   recupererProjetStartups() {
     const id_users = this.currentUser.id
     console.log(id_users);
@@ -147,6 +111,8 @@ export class DashbordStartPage implements OnInit {
       console.log(this.nbreprojets)
     })
   }
+
+
   //Modal page
   message = 'This modal example uses the modalController to present and dismiss modals.';
 
@@ -158,11 +124,6 @@ export class DashbordStartPage implements OnInit {
     });
     modal.present();
 
-    // const { data, role } = await modal.onWillDismiss();
-
-    // if (role === 'confirm') {
-    //   this.message = `Hello, ${data}!`;
-    // }
   }
   //fin Modal
 

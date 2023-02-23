@@ -24,25 +24,25 @@ export class InscriptstartupsPage implements OnInit {
   suivant: boolean = true;
 
   form: any = {
-    username:null,
-    email:null,
-    password:null,
-    nomcomplet:null,
-    adresse:null,
-    photo:null,
-    nomStartups:null,
-    contact:null,
-    emailStartups:null,
-    secteurActivite:null,
-    stadeDeveloppement:null,
-    numeroIdentification:null,
-    descriptionStartups:null,
-    dateCreation:null,
-    proprietaire:null,
-    formeJuridique:null,
-    chiffreAffaire:null,
-    localisation:null,
-    pays:null,
+    username: null,
+    email: null,
+    password: null,
+    nomcomplet: null,
+    adresse: null,
+    photo: null,
+    nomStartups: null,
+    contact: null,
+    emailStartups: null,
+    secteurActivite: null,
+    stadeDeveloppement: null,
+    numeroIdentification: null,
+    descriptionStartups: null,
+    dateCreation: null,
+    proprietaire: null,
+    formeJuridique: null,
+    chiffreAffaire: null,
+    localisation: null,
+    pays: null,
   }
   selectedFile!: File;
 
@@ -58,17 +58,22 @@ export class InscriptstartupsPage implements OnInit {
 
   isLinear = false;
 
-  constructor( private authService: AuthService, private router: Router,private fb: FormBuilder) { }
+  constructor(private authService: AuthService, 
+              private router: Router, 
+              private fb: FormBuilder,
+              ) { }
 
   step = 1;
 
   ngOnInit() {
   }
-  nextStep(){
+
+  nextStep() {
     this.suivant = false;
     this.step++;
   }
-  backStep(){
+
+  backStep() {
     this.suivant = true;
     this.step--;
   }
@@ -78,9 +83,9 @@ export class InscriptstartupsPage implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    
+
     this.authService.registerStartups(this.selectedFile, this.startups)
-      .subscribe( res => {
+      .subscribe(res => {
         console.log(res);
         if (res.message == "Startup cree avec succès!") {
           this.router.navigate(['/validation']);
@@ -89,6 +94,7 @@ export class InscriptstartupsPage implements OnInit {
         }
       });
   }
+  
 
 
 

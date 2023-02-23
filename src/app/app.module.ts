@@ -13,9 +13,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { GuardsGuard } from './_services/guards.guard';
 import { FormaddComponent } from './formadd/formadd.component';
+import { ModifierStartupsComponent } from './modifier-startups/modifier-startups.component';
 
 @NgModule({
-  declarations: [AppComponent,FormaddComponent],
+  declarations: [AppComponent,FormaddComponent,ModifierStartupsComponent],
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,    
@@ -24,8 +25,6 @@ import { FormaddComponent } from './formadd/formadd.component';
     NgChartsModule,
     HttpClientModule,
     FormsModule,
-    
-    
 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy},httpInterceptorProviders,GuardsGuard],

@@ -13,7 +13,9 @@ export class PreteurPage implements OnInit {
   prettotal: any;
   Prettotal: any;
   constructor(private router: Router,
-    private routes: ActivatedRoute,private storageService: StorageService,private pretService: PretService) { }
+    private routes: ActivatedRoute,
+    private storageService: StorageService,
+    private pretService: PretService) { }
 
   ngOnInit() {
     this.recupererPretprojets();

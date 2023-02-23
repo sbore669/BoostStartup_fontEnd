@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { FormaddComponent } from '../formadd/formadd.component';
+import { ModifierStartupsComponent } from '../modifier-startups/modifier-startups.component';
 import { AuthService } from '../_services/auth.service';
 import { InvestisseursService } from '../_services/investisseurs.service';
 import { StartupsService } from '../_services/startups.service';
@@ -22,6 +25,7 @@ export class ProfilStartupsPage implements OnInit {
      private investisseursService: InvestisseursService,
      private router: Router,
      private startupsService: StartupsService,
+     private modalCtrl: ModalController
      ) { }
 
   ngOnInit()  {
@@ -61,5 +65,12 @@ export class ProfilStartupsPage implements OnInit {
         console.log(err);
       }
     });
+  }
+
+  async openModal() {
+    const modal = await this.modalCtrl.create({
+      component: ModifierStartupsComponent,
+    });
+    modal.present();
   }
 }

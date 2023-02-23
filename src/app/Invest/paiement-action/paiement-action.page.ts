@@ -39,6 +39,8 @@ export class PaiementActionPage implements OnInit {
   messageService: any;
   errr: any;
   acccc: any;
+  action: any;
+  actproj: any;
 
   constructor(private router: Router, private actionService: ActionService,
     private storageService: StorageService, private projetsService: ProjetsService,
@@ -91,6 +93,7 @@ export class PaiementActionPage implements OnInit {
         })
         this.message = data;
         this.router.navigate(['/tabac/mesinvestissement']);
+        
       }, error => {
         this.errr = error
         console.log(error);
@@ -103,5 +106,6 @@ export class PaiementActionPage implements OnInit {
         })
       });
   }
+  
 
 }

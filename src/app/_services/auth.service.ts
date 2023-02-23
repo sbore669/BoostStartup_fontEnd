@@ -44,6 +44,17 @@ export class AuthService {
 
     return this.http.post<any>(`${AUTH_API}/inscrpStart`, formData);
   }
+  modifierUneStartups(idUsers: any, file: File, startups: Startups): Observable<any> {
+    const formData: FormData = new FormData();
+    
+    formData.append('file', file);
+    
+    formData.append('donneesstartups', JSON.stringify(startups));
+
+    console.log(JSON.stringify(startups))
+
+    return this.http.put(`${AUTH_API}/modifierStart/${idUsers}`, formData);
+  }
 
   logout(): Observable<any> {
     // return this.http.post(

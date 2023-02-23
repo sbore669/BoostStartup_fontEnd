@@ -29,6 +29,7 @@ export class StartupsService {
   listzeAllStartupsValide(): Observable<any>{
     return this.http.get(`${AUTH_API}/status/VALIDER`)
   }
+  
   //Methode pour recuperer une Startups par id
   listerStartupsParId(idUsers:any):Observable<any> {
     return this.http.get(`${AUTH_API}/start/${idUsers}`)
