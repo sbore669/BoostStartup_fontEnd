@@ -1,6 +1,6 @@
 <ion-content>
   <div class="container">
-    <div class="container">
+    <div class="container1">
       <div class="d-flex justify-content-center">
         <img src="/assets/gif/Account.gif" class="w-75 h-75" alt="...">
       </div>
@@ -27,7 +27,7 @@
           </ion-item>
 
           <ion-item>
-            <ion-input type="email" placeholder="Email"  maxlength="20" minlength="5" name="email" [(ngModel)]="startups.email"></ion-input>
+            <ion-input type="email" placeholder="Email"  maxlength="50" minlength="5" name="email" [(ngModel)]="startups.email"></ion-input>
           </ion-item>
 
           <ion-item>
@@ -61,6 +61,10 @@
           <ion-item>
             <ion-input type="text" placeholder="secteurActivite" name="secteurActivite"
               [(ngModel)]="startups.secteurActivite"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="stade de Developpement" name="stadeDeveloppement"
+              [(ngModel)]="startups.stadeDeveloppement"></ion-input>
           </ion-item>
           <ion-item>
             <ion-input type="email" placeholder="description" name="descriptionStartups"

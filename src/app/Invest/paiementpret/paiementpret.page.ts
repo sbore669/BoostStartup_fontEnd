@@ -35,6 +35,7 @@ export class PaiementpretPage implements OnInit {
   message: any;
   errr: any;
   pree: any;
+  pret: any;
 
   constructor(private router: Router,private pretService: PretService,
     private storageService: StorageService,private projetsService: ProjetsService,
@@ -44,6 +45,7 @@ export class PaiementpretPage implements OnInit {
   ngOnInit() {
     this.currentUser = this.storageService.getUser();
     this.recupererProjetDetails();
+    
   }
 
   recupererProjetDetails() {
@@ -87,6 +89,7 @@ export class PaiementpretPage implements OnInit {
         timer: 5000
       })
       this.router.navigate(['/tabac/mesinvestissement']);
+
     }, error => {
       this.errr = error
      // this.message = error.message
@@ -100,4 +103,5 @@ export class PaiementpretPage implements OnInit {
       })
     });
   }
+  
 }

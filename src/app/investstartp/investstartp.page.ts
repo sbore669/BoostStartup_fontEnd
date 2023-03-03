@@ -12,6 +12,10 @@ export class InveststartpPage implements OnInit {
   actionnaire: any;
   actrest: any;
 
+  responsive=true
+  p:number=1;
+  searhText: any
+
   constructor(private router: Router,
     private routes: ActivatedRoute,private storageService: StorageService,private actionService: ActionService) { }
 

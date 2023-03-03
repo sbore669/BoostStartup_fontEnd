@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { PreteurPageRoutingModule } from './preteur-routing.module';
 
 import { PreteurPage } from './preteur.page';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PreteurPageRoutingModule
+    PreteurPageRoutingModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
   ],
   declarations: [PreteurPage]
 })

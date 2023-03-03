@@ -34,6 +34,7 @@ export class PaiementDonPage implements OnInit {
   message: any;
   errr: any;
   donn: any;
+  don:any
 
   constructor(private router: Router,private donationService: DonationService,
     private storageService: StorageService,private projetsService: ProjetsService,
@@ -43,6 +44,7 @@ export class PaiementDonPage implements OnInit {
   ngOnInit() {
     this.currentUser = this.storageService.getUser();
     this.recupererProjetDetails();
+    
   }
 
   recupererProjetDetails() {
@@ -87,6 +89,7 @@ export class PaiementDonPage implements OnInit {
         timer: 5000
       })
       this.router.navigate(['/tabac/mesinvestissement']);
+      
     }, error => {
       this.errr = error
       console.log(error);
@@ -99,6 +102,7 @@ export class PaiementDonPage implements OnInit {
       })
     });
   }
+  
 /*  reloadPage(): void {
     window.location.reload();
   }*/

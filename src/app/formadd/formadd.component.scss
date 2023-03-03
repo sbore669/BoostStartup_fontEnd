@@ -3,10 +3,16 @@
 }
 a.btn {
     background: #3a6fe6;
-    color: aliceblue;
-    width: 48%;
-    font-size: 20px;
+    color: #fff;
+  //  font-size: 20px;
     border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+ion-button{
+    --background: #7ED957;
+    --color: #fff;
+    --border-radius: 20px;
 }
 // ion-button{
 //     background: #3a6fe6;
@@ -17,6 +23,11 @@ a.btn {
 // }
 
 
+
 a.btn-r {
     background: #615b5b;
+    color: aliceblue;
+    width: 48%;
+    font-size: 20px;
+    border-radius: 20px;
 }

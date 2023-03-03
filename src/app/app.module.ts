@@ -13,9 +13,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { GuardsGuard } from './_services/guards.guard';
 import { FormaddComponent } from './formadd/formadd.component';
+import { ModifierStartupsComponent } from './modifier-startups/modifier-startups.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
-  declarations: [AppComponent,FormaddComponent],
+  declarations: [AppComponent,FormaddComponent,ModifierStartupsComponent],
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,    
@@ -24,8 +27,8 @@ import { FormaddComponent } from './formadd/formadd.component';
     NgChartsModule,
     HttpClientModule,
     FormsModule,
-    
-    
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy},httpInterceptorProviders,GuardsGuard],

@@ -1,7 +1,10 @@
 <ion-header>
-  <ion-toolbar class="d-flex">
-    <ion-icon routerLink="/tabac/acceuil" class="ioconback" name="arrow-back"></ion-icon>
-    <ion-title>Details du projets</ion-title>
+  <ion-toolbar>
+    <div class="d-flex justify-content-between">
+      <div class="mx-2"><ion-icon routerLink="/tabac/acceuil" class="ioconback" name="arrow-back"></ion-icon></div>
+      <div class="mx-2"><ion-title>Details du projets</ion-title></div>
+    </div>
+
   </ion-toolbar>
 </ion-header>
 
@@ -17,12 +20,12 @@
     <ion-card-header>
       <ion-card-subtitle class="d-flex" style="margin-bottom: 5%;">
         <div class="" style="display: flex;"><ion-icon name="folder-open-outline" style="font-size: 2em;"></ion-icon>
-          &nbsp; <span style="margin-top: 4%;">Agriculture</span> </div>
+          &nbsp; <span style="margin-top: 4%;">{{nomprojets}}</span> </div>
         <div class="etats">
           <div style="margin-top: 5% !important;"><span>{{statProjets}}</span> </div>
         </div>
       </ion-card-subtitle>
-      <ion-card-title class="nomprj">{{nomprojets}}</ion-card-title>
+      <ion-card-title class="nomprj">{{objectif}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content class="descript">
@@ -41,13 +44,13 @@
       <!-- debut de la collapse -->
       <div class="collapse mesdetails" id="collapseExample1">
         <div class="detailsfin">
-          <div class="d-flex justify-content-between">
+          <!-- <div class="d-flex justify-content-between">
             <p class="text-muted">Date de début :</p>
             <p>01/01/2023</p>
-          </div>
+          </div> -->
           <div class="d-flex justify-content-between">
             <p class="text-muted">Publication :</p>
-            <p>01/08/2022</p>
+            <p>{{dateLancement | date: 'dd/MM/yyyy'}}</p>
           </div>
           <div class="d-flex justify-content-between">
             <p class="text-muted">Budget:</p>

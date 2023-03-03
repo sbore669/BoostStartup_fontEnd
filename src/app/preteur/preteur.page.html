@@ -1,10 +1,12 @@
 <ion-header>
   <ion-toolbar class="d-flex">
-    <ion-icon routerLink="/tabs/invest-par-projet" class="ioconback" name="arrow-back"></ion-icon>
-    <ion-title>Details du projets</ion-title>
+    <div class="d-flex justify-content-between">
+      <div class=""><ion-icon routerLink="/tabs/invest-par-projet" class="ioconback" name="arrow-back"></ion-icon></div>
+      <div class=""><ion-title>les prêteurs</ion-title></div>
+    </div>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar show-clear-button="always" value="Recherche"></ion-searchbar>
+    <ion-searchbar show-clear-button="always" [(ngModel)]="searhText" value="Recherche"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -20,7 +22,8 @@
     </ion-card>
   <!-- total investissement -->
   <!-- Card jury -->
-  <ion-card *ngFor="let pret of preteur">
+  <ion-card *ngFor="let pret of preteur| paginate:{itemsPerPage: 5, currentPage: p}
+  |filter:searhText; let i = index ">
     <ion-grid>
       <ion-row class="ion-align-items-center">
         <ion-col size="2">
@@ -37,6 +40,11 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+    
   </ion-card>
+  <div class="pag">
+      <pagination-controls (pageChange)="p = $event" nextLabel="Suivants" previousLabel="Précedents"
+        [responsive]="responsive"></pagination-controls>
+  </div>
   <!-- fin du card -->
 </ion-content>
