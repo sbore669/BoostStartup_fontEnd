@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { InveststartpPageRoutingModule } from './investstartp-routing.module';
 
 import { InveststartpPage } from './investstartp.page';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InveststartpPageRoutingModule
+    InveststartpPageRoutingModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
   ],
   declarations: [InveststartpPage]
 })

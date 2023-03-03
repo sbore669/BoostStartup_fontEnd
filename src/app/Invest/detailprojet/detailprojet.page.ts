@@ -72,7 +72,7 @@ export class DetailprojetPage implements OnInit {
       this.prix_action = this.detailsProjets.prix_action
       this.photo = this.detailsProjets.photo
       this.soldeprojet = this.detailsProjets.soldeprojet
-      this.nomStartups = this.detailsProjets.nomStartups
+      this.nomStartups = this.detailsProjets.startups.nomStartups
       this.statProjets = this.detailsProjets.statProjets  
     });
   }

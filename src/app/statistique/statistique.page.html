@@ -1,24 +1,30 @@
 <ion-header>
-  <div class="d-flex justify-content-between ent">
-    <div>
-      <img src="{{currentUser.photo}}" class="circle" alt="" srcset="">
+  <ion-toolbar>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="mx-3"><img src="{{currentUser.photo}}" class="circle" alt="" srcset=""></div>
+      <div class=""><ion-title>Statistique</ion-title></div>
     </div>
-    <div class="">
-      <H1 class="tittttre">Stats</H1>
-    </div>
-  </div>
-  
+  </ion-toolbar>
+  <!-- <img src="{{currentUser.photo}}" class="circle" alt="" srcset=""> -->
+
+
 </ion-header>
 <ion-content>
-  <img src="/assets/images/Chart 9.svg" alt="" srcset="">
-  <!-- <canvas baseChart class="chart"
+  <!-- <img src="/assets/images/Chart 9.svg" alt="" srcset=""> -->
+  <div class="oont">
+    <div class="card mt-3 crdd">
+  <canvas baseChart class="chart"
   [data]="barChartData"
   [options]="barChartOptions"
   [plugins]="barChartPlugins"
   [type]="barChartType"
   (chartHover)="chartHovered($event)"
   (chartClick)="chartClicked($event)">
-</canvas> -->
+</canvas>
+  </div>
+  </div>
+  
+  
   <!-- 
 <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button> -->
 
@@ -66,7 +72,7 @@
               <h6>Don Total</h6>
             </div>
             <div class="cardicon">
-              <p class="nbre">5000000</p>
+              <p class="nbre">{{totaldonation}}</p>
             </div>
           </ion-card>
         </ion-col>
@@ -82,7 +88,23 @@
               <h6>Pret Total </h6>
             </div>
             <div class="cardicon">
-              <p class="nbre">5000000</p>
+              <p class="nbre">{{totalpret}}</p>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- total investissement -->
+    <!-- total investissement -->
+    <div class="mt-2">
+      <ion-row>
+        <ion-col>
+          <ion-card class="desc" color="primary">
+            <div class="cardbody">
+              <h6>Action Total </h6>
+            </div>
+            <div class="cardicon">
+              <p class="nbre">{{totalAction}}</p>
             </div>
           </ion-card>
         </ion-col>

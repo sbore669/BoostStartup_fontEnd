@@ -12,6 +12,11 @@ export class PreteurPage implements OnInit {
   preteur: any;
   prettotal: any;
   Prettotal: any;
+  
+  responsive=true
+  p:number=1;
+  searhText: any
+  
   constructor(private router: Router,
     private routes: ActivatedRoute,
     private storageService: StorageService,

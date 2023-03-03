@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { DonnateurPageRoutingModule } from './donnateur-routing.module';
 
 import { DonnateurPage } from './donnateur.page';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DonnateurPageRoutingModule
+    DonnateurPageRoutingModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
   ],
   declarations: [DonnateurPage]
 })

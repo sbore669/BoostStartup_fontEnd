@@ -3,10 +3,10 @@
     <ion-buttons slot="start">
       <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
     </ion-buttons>
-    <ion-title>Welcome</ion-title>
-    <ion-buttons slot="end">
+    <ion-title>Création d'un projet</ion-title>
+    <!-- <ion-buttons slot="end">
       <ion-button (click)="confirm()">Confirm</ion-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -102,13 +102,16 @@
                 [value]="type.idtypeprojets">{{type.nomtype}}</ion-select-option>
             </ion-select>
           </ion-item>
-          <ion-item>
-            <input type="file" placeholder="photo" (change)="onFileSelected($event)" name="photo">
-          </ion-item>
+          
+            <input type="file" class="form-control mt-3" placeholder="photo" (change)="onFileSelected($event)" name="photo">
+          
         </ion-list>
-        <div class="d-flex justify-content-around mt-3 btnn">
-          <a class="btn-r" (click)="backStep()">Suivant</a>
-         <ion-button class="btn" expand="block" [disabled]="!registerForm.valid" type="submit">Creer la Collecte</ion-button>
+        <div class=" w-100 d-flex justify-content-between mt-3 btnn">
+          <div class=""><a class="btn" (click)="backStep()">Precedent</a></div>
+          <div class="">
+            <ion-button  [disabled]="!registerForm.valid" type="submit">Creer la
+              Collecte</ion-button>
+          </div>
         </div>
       </div>
     </form>
