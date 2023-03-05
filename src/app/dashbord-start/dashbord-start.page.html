@@ -34,12 +34,13 @@
           <ion-slide>
             <ion-card class="cardsldbleu">
               <ion-card-header>
-                <ion-card-title class="tcll">Action Vendu</ion-card-title>
-                <ion-card-subtitle class="montan">3 000 000 XOF</ion-card-subtitle>
+                <ion-card-title class="tcll">Action</ion-card-title>
+                <ion-card-subtitle class="montan">{{totalAction}} XOF</ion-card-subtitle>
+                <!-- <p>Collectés sur l'ensemble des actions vendues</p> -->
               </ion-card-header>
               <ion-card-content class="projcaerd">
-                <div class="w-50 contcard">Nombre Total</div>
-                <div class="w-50 projtt">320</div>
+                <div class="w-50 contcard">Total Projets</div>
+                <div class="w-50 projtt">{{nbreprojets}}</div>
               </ion-card-content>
             </ion-card>
           </ion-slide>
@@ -48,11 +49,11 @@
             <ion-card class="cardsld">
               <ion-card-header>
                 <ion-card-title class="tcll">Total Pret</ion-card-title>
-                <ion-card-subtitle class="montan">8 000 000 XOF</ion-card-subtitle>
+                <ion-card-subtitle class="montan">{{totalpret}} XOF</ion-card-subtitle>
               </ion-card-header>
               <ion-card-content class="projcaerd">
-                <div class="w-50 contcard">Nombre de prêtteur</div>
-                <div class="w-50 projtt">320</div>
+                <div class="w-50 contcard">Total Projets</div>
+                <div class="w-50 projtt">{{nbreprojets}}</div>
               </ion-card-content>
             </ion-card>
           </ion-slide>
