@@ -99,9 +99,9 @@ export class StatistiquePage implements OnInit {
   public barChartData: ChartData<'bar'> = {
     labels: [ '2020', '2021', '2022', '2023'],
     datasets: [
-      { data: [ 65, 59, 80, 81 ], label: 'Pret',backgroundColor: '#7ED957',borderRadius: 5 },
-      { data: [ 28, 48, 40, 29 ], label: 'Action',backgroundColor: '#1C475E',borderRadius: 5  },
-      { data: [ 38, 28, 30, 89 ], label: 'Donation',backgroundColor: '#38B6FF',borderRadius: 5  }
+      { data: [ 65, 59, 80, 81 ], label: 'Pret',backgroundColor: '#7ED957',borderRadius: 8 },
+      { data: [ 28, 48, 40, 29 ], label: 'Action',backgroundColor: '#1C475E',borderRadius: 8  },
+      { data: [ 38, 28, 30, 89 ], label: 'Donation',borderRadius: 8  }
     ]
   };
 

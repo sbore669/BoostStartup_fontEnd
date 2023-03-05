@@ -47,6 +47,8 @@ export class DashbordStartPage implements OnInit {
     prix_action: null,
     photo: null,
   }
+  totalpret: any;
+  totalAction: any;
 
 
   constructor(private authService: AuthService,
@@ -66,6 +68,8 @@ export class DashbordStartPage implements OnInit {
     this.recupererTotalstartups();
     this.recupererTotalprojetsParstartups();
     this.recupererProjetStartups();
+    this.recuperTotalPretStartup();
+    this.recuperTotalActionStartup();
   }
 
   nextStep() {
@@ -109,6 +113,20 @@ export class DashbordStartPage implements OnInit {
     this.projetsService.nombredeprojetsparStartups(id_users).subscribe(data => {
       this.nbreprojets = data
       console.log(this.nbreprojets)
+    })
+  }
+  recuperTotalPretStartup(){
+    const id_users = this.currentUser.id
+    this.projetsService.totalprettotalparStarup(id_users).subscribe(data => {
+      this.totalpret = data
+      console.log(this.totalpret)
+    })
+  }
+  recuperTotalActionStartup(){
+    const id_users = this.currentUser.id
+    this.projetsService.totalActionparStarup(id_users).subscribe(data => {
+      this.totalAction = data
+      console.log(this.totalAction)
     })
   }
 
