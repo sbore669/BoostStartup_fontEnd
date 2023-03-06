@@ -76,10 +76,6 @@
                   <p>Projet:</p>
                   <p>{{donatio.projets.nomprojets}}</p>
                 </div>
-                <div class="d-flex justify-content-between">
-                  <p>Interêt annuelle:</p>
-                  <p>{{donatio.projets.pourcentage}}</p>
-                </div>
               </div>
               <!-- fin de la collapse -->
             </div>
@@ -147,15 +143,8 @@
             </div>
             <!-- debut de la collapse -->
             <div class="collapse" id="collapseExample2">
-              <div class="row">
-                <!-- <div class="col-4">
-                  <div class="text-center colprojet">Projet:</div>
-                  <div class="text-center mt-3 mb-2 colprojet1">Pourcentage:</div>
-                </div>
-                <div class="col-8">
-                  <div class="colnomproj">{{pre.projets.nomprojets}}</div>
-                  <div class="mt-2 colpourct">{{pre.projets.pourcentage}}</div>
-                </div> -->
+              <!-- <div class="row">
+                
                 <div class="d-flex justify-content-around">
                   <p class="text-muted">Projet:</p>
                   <p>{{pre.projets.nomprojets}}</p>
@@ -163,6 +152,20 @@
                 <div class="d-flex justify-content-around">
                   <p class="text-muted">Pourcentage :</p>
                   <p>{{pre.projets.pourcentage}}</p>
+                </div>
+              </div> -->
+              <div class="row p-3">
+                <div class="d-flex justify-content-between">
+                  <div class="colprojet">Projet:</div>
+                  <div class="colprojet">{{pre.projets.nomprojets}}</div>
+                </div>
+                <div class="d-flex justify-content-between mt-1">
+                  <div class="colprojet">Pourcentage :</div>
+                  <div class="colprojet">{{pre.projets.pourcentage}}</div>
+                </div>
+                <div class="d-flex justify-content-between mt-1">
+                  <div class="colprojet">Retour sur le prêt :</div>
+                  <div class="colprojet">{{pre.retourinvestissement}}</div>
                 </div>
               </div>
               <!-- fin de la collapse -->

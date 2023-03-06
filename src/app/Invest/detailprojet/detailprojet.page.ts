@@ -34,6 +34,7 @@ export class DetailprojetPage implements OnInit {
   nomStartups: any;
   statProjets: any;
   currentUser: any;
+  totalactionvendu: any;
   constructor(private projetsService: ProjetsService, private router: Router,
     private routes: ActivatedRoute,private storageService: StorageService,
   ) { }
@@ -49,6 +50,7 @@ export class DetailprojetPage implements OnInit {
     console.log(idprojet);
     this.projetsService.recupererProjetsparId(idprojet).subscribe(data => {
     this.detailsProjets = data
+    console.log(this.detailsProjets)
 
       
       console.log(this.detailsProjets);
@@ -65,6 +67,7 @@ export class DetailprojetPage implements OnInit {
       this.nbretotal_action = this.detailsProjets.nbretotal_action
       this.objectifpret = this.detailsProjets.objectifpret
       this.objectif = this.detailsProjets.objectif
+      this.totalactionvendu = this.detailsProjets.actiontotalVendu
       this.pourcentage = this.detailsProjets.pourcentage
       this.pret_maximun = this.detailsProjets.pret_maximun
       this.pret_minimun = this.detailsProjets.pret_minimun

@@ -12,19 +12,19 @@
     <img src="{{image}}" class="imageproj" alt="" srcset="">
     <div class="d-flex  align-items-center mt-1 ms-2">
       <div class="phtprojet">
-        <img src="{{image}}" class="logcv" alt="" srcset="">
+        <img src="{{pht}}" class="logcv" alt="" srcset="">
       </div>
       <div class="ms-2 nomstartp">{{nomStartups}} </div>
     </div>
     <ion-card-header>
       <ion-card-subtitle class="d-flex" style="margin-bottom: 5%;">
         <div class="" style="display: flex;"><ion-icon name="folder-open-outline" style="font-size: 2em;"></ion-icon>
-          &nbsp; <span style="margin-top: 4%;">Agriculture</span> </div>
+          &nbsp; <span style="margin-top: 4%;">{{nomStartups}}</span> </div>
         <div class="etats">
           <div style="margin-top: 5% !important;"><span>{{statProjets}}</span> </div>
         </div>
       </ion-card-subtitle>
-      <ion-card-title class="nomprj">{{nomprojets}}</ion-card-title>
+      <ion-card-title class="nomprj">{{objectif}}</ion-card-title>
     </ion-card-header>
 
     <ion-card-content class="descript">
@@ -63,6 +63,10 @@
             <p class="text-muted">Durée du projet :</p>
             <p>{{dureeProjet}}</p>
           </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Donation total :</p>
+            <p>{{donationtotalobtenu}}</p>
+          </div>
           <!-- <hr class="border-primary"> -->
         </div>
       </div>
@@ -91,6 +95,10 @@
           <div class="d-flex justify-content-between">
             <p class="text-muted">Action disponible:</p>
             <p>{{action_restante}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Action total vendues:</p>
+            <p>{{totalactionvendu}}</p>
           </div>
           <!-- <hr class="border-primary"> -->
         </div>
@@ -121,6 +129,10 @@
             <p class="text-muted">Prêt maximun:</p>
             <p>{{pret_maximun}}</p>
           </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Prêt total obtenu:</p>
+            <p>{{prettotalobtenu}}</p>
+          </div>
           <!-- <hr class="border-primary"> -->
         </div>
       </div>
@@ -128,9 +140,7 @@
       <!-- fin de la collapse -->
     </div>
     <div class="mt-5 mb-5 ion-text-center">
-      <!-- <button type="button" routerLink="/" class="btn btn-primary boutn">Investir</button> -->
-      <!-- <button type="button" [routerLink]="['/detailprojet',projets.idprojet]" class="btn btn-primary boutn">details</button> -->
-      <ion-button expand="block" class="boutn" id="open-modal1">Action</ion-button>
+      <!-- <ion-button expand="block" class="boutn" id="open-modal1">Action</ion-button> -->
     </div>
     <!-- fin du card  -->
   </div>

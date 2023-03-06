@@ -34,6 +34,8 @@ export class StaprojetsdetailPage implements OnInit {
   nomStartups: any;
   statProjets: any;
   currentUser: any;
+  pht: any;
+  totalactionvendu: any;
   constructor(private projetsService: ProjetsService, private router: Router,
     private routes: ActivatedRoute,private storageService: StorageService,
   ) { }
@@ -72,8 +74,10 @@ export class StaprojetsdetailPage implements OnInit {
       this.prix_action = this.detailsProjets.prix_action
       this.photo = this.detailsProjets.photo
       this.soldeprojet = this.detailsProjets.soldeprojet
-      this.nomStartups = this.detailsProjets.nomStartups
-      this.statProjets = this.detailsProjets.statProjets  
+      this.nomStartups = this.detailsProjets.startups.nomStartups
+      this.statProjets = this.detailsProjets.statProjets
+      this.totalactionvendu = this.detailsProjets.actiontotalVendu
+      this.pht = this.detailsProjets.startups.photo  
     });
   }
 
